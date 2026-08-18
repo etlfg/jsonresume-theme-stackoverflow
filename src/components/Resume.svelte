@@ -64,11 +64,11 @@
 
   @media print {
     .resume {
-      margin: 0.1em;
-      padding: 0.1em;
+      margin: 0;
+      padding: 0;
       -ms-word-wrap: break-word;
       word-wrap: break-word;
-      line-height: 1.25;
+      line-height: var(--lh-base);
     }
   }
 

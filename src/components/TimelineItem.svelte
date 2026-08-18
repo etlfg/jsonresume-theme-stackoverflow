@@ -80,8 +80,10 @@
 </section>
 
 <style>
-  .timeline-item {
+.timeline-item {
     margin-top: var(--sp-4);
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 
   .timeline-item:first-of-type {
@@ -164,7 +166,11 @@
   }
 
   @media print {
-    .timeline-item { margin-top: var(--sp-3); }
+    .timeline-item {
+      margin-top: var(--sp-3);
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
     .company a { color: var(--color-text); }
     .company::before,
     .institution::before,

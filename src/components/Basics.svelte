@@ -132,7 +132,12 @@
     .profiles .url :global(.show-only-url-print) { display: none; }
     .profiles .url :global(a)::after { content: attr(href); }
     .profiles :global(.item) { padding: 0; }
-    .main-summary { padding: 0; background: transparent; }
+    .main-summary { 
+      padding: var(--sp-4); 
+      background-color: var(--color-background-alt) !important; 
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
   }
 
   @media screen and (max-width: 601px) {
