@@ -137,32 +137,46 @@
     {
       "name": "Frontend",
       "level": "Senior",
-      "keywords": ["React", "TypeScript", "Next.js", "Tailwind CSS", "Svelte"]
+      "keywords": [
+        { "name": "React", "level": "Advanced" },
+        { "name": "TypeScript", "level": "Advanced" },
+        { "name": "Next.js", "level": "Advanced" },
+        { "name": "Tailwind CSS", "level": "Intermediate" },
+        { "name": "Svelte", "level": "Intermediate" }
+      ]
     },
     {
       "name": "Backend",
       "level": "Expert",
-      "keywords": ["Node.js", "Python", "Go", "PostgreSQL", "Redis"]
+      "keywords": [
+        { "name": "Node.js", "level": "Advanced" },
+        { "name": "Python", "level": "Advanced" },
+        { "name": "Go", "level": "Intermediate" },
+        { "name": "PostgreSQL", "level": "Advanced" },
+        { "name": "Redis", "level": "Intermediate" }
+      ]
     },
     {
       "name": "DevOps",
       "level": "Advanced",
-      "keywords": ["AWS", "Docker", "Kubernetes", "Terraform", "GitHub Actions"]
+      "keywords": [
+        { "name": "AWS", "level": "Advanced" },
+        { "name": "Docker", "level": "Advanced" },
+        { "name": "Kubernetes", "level": "Intermediate" },
+        { "name": "Terraform", "level": "Beginner" },
+        { "name": "GitHub Actions", "level": "Advanced" }
+      ]
     },
     {
       "name": "Architecture",
       "level": "Senior",
-      "keywords": ["Microservices", "Event-driven", "REST", "GraphQL", "gRPC"]
-    },
-    {
-      "name": "Testing",
-      "level": "Proficient",
-      "keywords": ["Jest", "Cypress", "Playwright", "Load Testing"]
-    },
-    {
-      "name": "Machine Learning",
-      "level": "Intermediate",
-      "keywords": ["PyTorch", "scikit-learn", "NLP", "Computer Vision"]
+      "keywords": [
+        { "name": "Microservices", "level": "Advanced" },
+        { "name": "Event-driven", "level": "Advanced" },
+        { "name": "REST", "level": "Advanced" },
+        { "name": "GraphQL", "level": "Intermediate" },
+        { "name": "gRPC", "level": "Beginner" }
+      ]
     }
   ],
   "languages": [
