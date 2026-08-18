@@ -7,7 +7,7 @@
 </script>
 
 {#if languages?.length}
-  <SectionHeader title={t('resume.languages')} count={languages.length}>
+  <SectionHeader title={t('resume.languages')} count={languages.length} sectionId="languages">
     <section class="languages-grid">
       {#each languages as lang}
         <div class="language-entry display">

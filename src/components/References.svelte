@@ -6,7 +6,7 @@
 </script>
 
 {#if references?.length}
-  <SectionHeader title={t('resume.references')} count={references.length}>
+  <SectionHeader title={t('resume.references')} count={references.length} sectionId="references">
     <section class="references-list">
       {#each references as ref}
         <div class="reference-item">
