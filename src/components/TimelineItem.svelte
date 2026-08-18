@@ -1,4 +1,5 @@
 <script>
+  import { t } from '../utils/helpers.ts';
   import FormattedText from './FormattedText.svelte';
   import DateRange from './DateRange.svelte';
   import KeywordList from './KeywordList.svelte';
@@ -19,6 +20,13 @@
     location = undefined,
     children = undefined,
   } = $props();
+
+  // Update current language whenever the language prop changes
+  $effect(() => {
+    setI18nLanguage(language);
+  });
+
+  const separator = $derived(t('resume.separator'));
 </script>
 
 <section class="timeline-item">
@@ -34,6 +42,7 @@
       {/if}
       {#if subtitle}
         <div class={subtitleClass}>
+          {separator}
           {#if url}
             <a target="_blank" href={url}>{subtitle}</a>
           {:else}
@@ -109,13 +118,6 @@
     font-weight: 700;
   }
 
-  .company::before,
-  .institution::before,
-  .organization::before,
-  .awarder::before {
-    content: "at ";
-  }
-
   .company,
   .institution,
   .organization,
@@ -156,20 +158,9 @@
     margin-bottom: 0;
   }
 
-  .header-left .position + .company::before,
-  .header-left .position + .institution::before,
-  .header-left .position + .organization::before,
-  .header-left .position + .awarder::before {
-    content: "at ";
-  }
-
-  @media print {
+    @media print {
     .timeline-item { margin-top: var(--sp-3); }
     .company a { color: var(--color-text); }
-    .company::before,
-    .institution::before,
-    .organization::before,
-    .awarder::before { content: "at "; }
     :global(.section) :global(p) { margin: 0; padding: 0; }
     :global(.fa-location-dot):before { padding-left: 0.1em; }
   }
@@ -181,7 +172,6 @@
   @media screen and (min-width: 1025px) {
     :global(.section) > section > header .space-left { opacity: 1; cursor: pointer; }
     :global(.section) > section:not(.main-summary) { margin-left: 1.67rem; }
-    .company::before, .institution::before, .organization::before, .awarder::before { content: "| "; }
     .header-left { float: left; width: 70%; word-break: normal; }
     .display { display: none; }
     .display:not(.none) { display: block; }
