@@ -171,6 +171,9 @@
       break-inside: avoid !important;
       page-break-inside: avoid !important;
     }
+    .item .summary {
+      margin-top: var(--sp-3) !important;
+    }
     .company a { color: var(--color-text); }
     .company::before,
     .institution::before,
