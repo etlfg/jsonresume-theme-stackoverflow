@@ -2,6 +2,7 @@ import type { I18nResources } from "../types.ts";
 
 const resources: I18nResources = {
   en: {
+    "resume.separator": "at ",
     "resume.summary": "Summary",
     "resume.skills": "Skills",
     "resume.workExperience": "Work Experience",
@@ -16,6 +17,7 @@ const resources: I18nResources = {
     "resume.references": "References",
   },
   de: {
+    "resume.separator": "bei ",
     "resume.summary": "Übersicht",
     "resume.skills": "Kenntnisse",
     "resume.workExperience": "Berufserfahrung",
@@ -30,6 +32,7 @@ const resources: I18nResources = {
     "resume.references": "Empfehlungen",
   },
   fr: {
+    "resume.separator": "à ",
     "resume.summary": "Résumé",
     "resume.skills": "Compétences",
     "resume.workExperience": "Expérience professionnelle",
@@ -44,6 +47,7 @@ const resources: I18nResources = {
     "resume.references": "Références",
   },
   es: {
+    "resume.separator": "en ",
     "resume.summary": "Resumen",
     "resume.skills": "Habilidades",
     "resume.workExperience": "Experiencia laboral",
@@ -58,6 +62,7 @@ const resources: I18nResources = {
     "resume.references": "Referencias",
   },
   it: {
+    "resume.separator": "presso ",
     "resume.summary": "Profilo",
     "resume.skills": "Competenze",
     "resume.workExperience": "Esperienza lavorativa",
@@ -72,6 +77,7 @@ const resources: I18nResources = {
     "resume.references": "Referenze",
   },
   pt: {
+    "resume.separator": "na ",
     "resume.summary": "Resumo",
     "resume.skills": "Competências",
     "resume.workExperience": "Experiência profissional",
@@ -86,6 +92,7 @@ const resources: I18nResources = {
     "resume.references": "Referências",
   },
   zh: {
+    "resume.separator": "在 ",
     "resume.summary": "简介",
     "resume.skills": "技能",
     "resume.workExperience": "工作经历",
@@ -100,6 +107,7 @@ const resources: I18nResources = {
     "resume.references": "推荐信",
   },
   ja: {
+    "resume.separator": "の ",
     "resume.summary": "概要",
     "resume.skills": "スキル",
     "resume.workExperience": "職歴",
@@ -114,6 +122,7 @@ const resources: I18nResources = {
     "resume.references": "推薦状",
   },
   ko: {
+    "resume.separator": "에서 ",
     "resume.summary": "요약",
     "resume.skills": "기술",
     "resume.workExperience": "경력",
@@ -128,6 +137,7 @@ const resources: I18nResources = {
     "resume.references": "추천서",
   },
   nl: {
+    "resume.separator": "bij ",
     "resume.summary": "Samenvatting",
     "resume.skills": "Vaardigheden",
     "resume.workExperience": "Werkervaring",
@@ -142,6 +152,7 @@ const resources: I18nResources = {
     "resume.references": "Referenties",
   },
   pl: {
+    "resume.separator": "w ",
     "resume.summary": "Podsumowanie",
     "resume.skills": "Umiejętności",
     "resume.workExperience": "Doświadczenie zawodowe",
@@ -156,6 +167,7 @@ const resources: I18nResources = {
     "resume.references": "Referencje",
   },
   ru: {
+    "resume.separator": "в ",
     "resume.summary": "Обо мне",
     "resume.skills": "Навыки",
     "resume.workExperience": "Опыт работы",
