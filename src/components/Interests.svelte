@@ -57,15 +57,13 @@
 
   @media print {
     .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      column-gap: var(--sp-5);
-      row-gap: var(--sp-3);
+      display: block !important;
     }
     .interest-item {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
+      display: block !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      margin-bottom: var(--sp-3) !important;
     }
     .summary {
       display: block !important;

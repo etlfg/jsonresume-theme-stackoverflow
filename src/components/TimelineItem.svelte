@@ -172,7 +172,7 @@
       page-break-inside: avoid !important;
     }
     .item .summary {
-      margin-top: var(--sp-4) !important;
+      margin-top: 8px !important;
     }
     .company a { color: var(--color-text); }
     .company::before,
