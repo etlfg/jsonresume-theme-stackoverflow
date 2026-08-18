@@ -62,6 +62,11 @@
       column-gap: var(--sp-5);
       row-gap: var(--sp-3);
     }
+    .interest-item {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
     .summary {
       display: block !important;
       margin-top: var(--sp-1) !important;
