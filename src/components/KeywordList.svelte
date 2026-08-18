@@ -52,10 +52,10 @@
   }
 
   :host {
-    --color-level-beginner: #d97706;
-    --color-level-intermediate: #2563eb;
-    --color-level-advanced: #059669;
-    --color-level-master: #7c3aed;
+    --color-level-beginner: var(--color-bar-beginner);
+    --color-level-intermediate: var(--color-bar-intermediate);
+    --color-level-advanced: var(--color-bar-advanced);
+    --color-level-master: var(--color-bar-master);
   }
 
   .badge-text {
@@ -63,41 +63,49 @@
   }
 
   .level-indicator {
-    font-size: 0.75em;
-    font-weight: 600;
+    font-size: 0.65em;
+    font-weight: 900;
     text-transform: uppercase;
-    opacity: 0.8;
-    border-left: 1px solid var(--color-keyword-border);
+    opacity: 1;
+    border-left: 3px solid var(--level-color, #000) !important;
     padding-left: 4px;
-    color: var(--level-color, var(--color-text-muted));
+    color: var(--level-color, #000) !important;
+    background: rgba(0,0,0,0.05) !important;
+    display: inline-block;
+    line-height: 1;
   }
 
   @media print {
     ul { 
       margin: 0; 
+      display: block; 
     }
     li { 
-      display: inline-flex;
-      margin: 1px 2px 1px 0; 
-      padding: 1px 6px; 
-      font-size: var(--fs-fine); 
-      background-color: var(--color-keyword-bg); 
-      line-height: 1.2; 
-      border: 1px solid var(--color-keyword-border);
-      border-radius: 3px;
+      display: inline-block;
+      margin: 0; 
+      padding: 0; 
+      font-size: var(--fs-meta); 
+      background: transparent; 
+      line-height: var(--lh-snug); 
+      border: none;
+      border-radius: 0;
     }
+    li::after { padding: 0 0.4em; content: "·"; color: var(--color-text-muted); }
+    li:last-of-type::after { content: ""; }
     .level-indicator { 
       display: inline-block !important; 
-      font-size: 0.75em;
-      opacity: 0.8;
-      border-left: 1px solid var(--color-keyword-border);
-      padding-left: 4px;
-      color: var(--level-color, var(--color-text-muted)) !important;
+      font-size: 0.8em;
+      opacity: 0.6;
+      border: none;
+      padding: 0 0 0 4px;
+      color: #666 !important;
     }
+    :global(.skills-grid) li::after { padding: 0 0.35em; content: "·"; color: var(--color-text-muted); }
+    :global(.skills-grid) li:last-of-type::after { content: ""; }
     ul::before { font-size: var(--fs-body); font-weight: 600; }
     ul.keywords::before { content: "Skills: "; font-size: var(--fs-body); }
-    ul.courses::before { content: "Major courses: "; font-size: var(--fs-body); }
     :global(.skills-grid) ul::before { content: none; }
+    ul.courses::before { content: "Major courses: "; font-size: var(--fs-body); }
     :global(.skills-grid) .keywords { font-size: var(--fs-meta); margin: 0; }
   }
 </style>
