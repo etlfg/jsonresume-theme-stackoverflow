@@ -1,7 +1,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 1cm;
+    margin: 1.5cm 2cm;
   }
 
   body {
@@ -17,7 +17,7 @@
   }
 
   a {
-    color: var(--color-link) !important;
+    color: #007bff !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
