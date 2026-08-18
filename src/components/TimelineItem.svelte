@@ -166,7 +166,7 @@
   @media print {
     .timeline-item { margin-top: var(--sp-3); }
     .item .summary {
-      margin-top: 8px !important;
+      margin-top: 16px !important;
     }
     .company a { color: var(--color-text); }
     .company::before,

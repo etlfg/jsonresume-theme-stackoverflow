@@ -41,7 +41,7 @@ li {
   font-size: var(--fs-fine);
   background-color: var(--color-keyword-bg) !important;
   color: var(--color-keyword-text) !important;
-  border-radius: 4px !important;
+  border-radius: 8px !important;
   line-height: 1.5;
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
