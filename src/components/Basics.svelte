@@ -11,42 +11,36 @@
 
 {#if basics}
   <header class="header clear">
-    {#if basics.image}
-      <img class="image" src={basics.image} alt={basics.name}>
-      <div class="middle">
-        <h1 class="name">{basics.name}</h1>
-        <h2 class="label">{basics.label}</h2>
+    <div class="header-top">
+      <div class="name-container">
+        {#if basics.image}
+          <img class="image" src={basics.image} alt={basics.name}>
+        {/if}
+        <div class="name-text">
+          <h1 class="name">{basics.name}</h1>
+          <h2 class="label">{basics.label}</h2>
+        </div>
       </div>
-    {:else}
-      <div>
-        <h1 class="name">{basics.name}</h1>
-        <h2 class="label">{basics.label}</h2>
+
+      <div class="contact-container">
+        <div class="contact-details">
+          <ContactInfo website={basics.website} email={basics.email} phone={basics.phone} />
+          {#if basics.location}
+             <div class="contact-secondary">
+               {#if basics.location}
+                 <span class="location">
+                   {#if basics.location.address}<span>{basics.location.address}, </span>{/if}
+                   {#if basics.location.city}<span>{basics.location.city}, </span>{/if}
+                   {#if basics.location.region}<span>{basics.location.region}</span>{/if}
+                   {#if basics.location.countryCode}<span> ({basics.location.countryCode})</span>{/if}
+                 </span>
+               {/if}
+               <BirthDate birth={basics.birth} />
+             </div>
+          {/if}
+        </div>
       </div>
-    {/if}
-
-    {#if basics.location}
-      <span class="location">
-        {#if basics.location.address}
-          <span>{basics.location.address},</span>
-        {/if}
-        {#if basics.location.postalCode}
-          <span>{basics.location.postalCode},</span>
-        {/if}
-        {#if basics.location.city}
-          <span>{basics.location.city},</span>
-        {/if}
-        {#if basics.location.region}
-          <span>{basics.location.region}</span>
-        {/if}
-        {#if basics.location.countryCode}
-          <span>({basics.location.countryCode})</span>
-        {/if}
-      </span>
-    {/if}
-
-    <BirthDate birth={basics.birth} />
-
-    <ContactInfo website={basics.website} email={basics.email} phone={basics.phone} />
+    </div>
 
     {#if basics.profiles?.length}
       <nav class="profiles" aria-label="Social profiles">
@@ -68,78 +62,131 @@
 
 <style>
   .header {
-    margin-bottom: var(--sp-5);
+    margin-bottom: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    padding: 0 0 var(--sp-4) var(--sp-6);
+    border-left: 6px solid var(--header-border-color);
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--sp-4);
+  }
+
+  .name-container {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-6);
+  }
+
+  .name-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--sp-3);
+    font-size: var(--fs-meta);
+    color: var(--color-text-secondary);
+  }
+
+  .contact-secondary {
+    display: block;
+    margin-top: var(--sp-1);
+    font-size: var(--fs-fine);
+    color: var(--color-text-muted);
+    text-align: right;
   }
 
   .name {
-    font-size: var(--fs-name);
-    font-weight: 200;
-    line-height: var(--lh-tight);
-    letter-spacing: -0.015em;
+    font-size: var(--header-name-font-size);
+    font-weight: var(--header-name-name-font-weight);
+    line-height: 1;
+    letter-spacing: var(--header-name-letter-spacing);
     color: var(--color-heading);
+    margin: 0;
   }
 
   .label {
-    color: var(--color-heading);
+    color: var(--color-accent);
     font-size: var(--fs-label);
-    font-weight: 300;
-    line-height: var(--lh-snug);
-    margin-top: var(--sp-1);
-    margin-bottom: var(--sp-3);
+    font-weight: var(--header-label-font-weight);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    margin-top: var(--sp-2);
   }
 
   .location {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--sp-2);
-    display: block;
+    display: inline;
   }
 
   .image {
-    width: 11em;
-    float: right;
-    border-radius: 4px;
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border-light);
   }
 
   .profiles {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    margin-top: var(--sp-1);
-    gap: var(--sp-1) 0;
-  }
-
-  .section {
-    margin-bottom: 1rem;
+    gap: var(--sp-4);
+    font-size: var(--fs-fine);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .main-summary {
-    background: var(--color-background-alt);
-    padding: var(--sp-4);
     line-height: var(--lh-base);
   }
 
-  /* p margin reset handled by summary wrapper */
-
   @media print {
-    .header { margin-bottom: var(--sp-4); }
-    .profiles :global(a:not(.hide-href-print))::after {
-      content: " · " attr(href);
-      font-size: var(--fs-fine);
-      color: var(--color-text-muted);
-      font-weight: 400;
-      margin-left: 0.2em;
+    .header { 
+      margin-bottom: var(--sp-4); 
     }
-    .profiles .url :global(.show-only-url-print) { display: none; }
-    .profiles .url :global(a)::after { content: attr(href); }
-    .profiles :global(.item) { padding: 0; }
-    .main-summary { padding: 0; background: transparent; }
+    .main-summary { padding: var(--sp-4); background: transparent; border: none; }
   }
 
   @media screen and (max-width: 601px) {
-    .header .profiles, .header :global(.contact) { flex-wrap: wrap; }
-    .header > div > div { margin-right: 0.8em; margin-bottom: 0.3em; }
-    .name { font-size: 1.857rem; }
-    .label { font-size: 1.286rem; }
-    .image { float: none; display: block; margin: 0 auto 1rem; width: 8em; }
+    .header-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .name-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .contact-container {
+      text-align: center;
+      align-items: center;
+    }
+    .contact-details {
+      justify-content: center;
+    }
+    .contact-secondary {
+      text-align: center;
+    }
+    .name { font-size: 2.2rem; }
+    .label { font-size: 1rem; }
   }
 </style>
