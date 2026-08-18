@@ -36,13 +36,13 @@
     ul { margin: var(--sp-2) 0 0 0; }
 li { 
   display: inline-block;
-  margin: 2px 4px 2px 0; 
-  padding: 2px 6px; 
-  font-size: var(--fs-fine); 
-  background-color: var(--color-keyword-bg) !important; 
+  margin: 2px 4px 2px 0;
+  padding: 2px 6px;
+  font-size: var(--fs-fine);
+  background-color: var(--color-keyword-bg) !important;
   color: var(--color-keyword-text) !important;
-  border-radius: 3px; 
-  line-height: 1.5; 
+  border-radius: 3px !important;
+  line-height: 1.5;
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
 }
