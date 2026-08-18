@@ -16,7 +16,7 @@
       {#each publications as pub}
         <TimelineItem
           title={pub.name}
-          subtitle={pub.publisher ? 'in ' + pub.publisher : ''}
+          subtitle={pub.publisher || ''}
           subtitleClass="publisher"
           url={pub.website}
           singleDate={pub.releaseDate ? MY(pub.releaseDate) : undefined}
