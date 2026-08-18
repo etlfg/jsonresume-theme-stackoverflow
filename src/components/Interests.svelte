@@ -8,7 +8,7 @@
 </script>
 
 {#if interests?.length}
-  <SectionHeader title={t('resume.interests')} count={interests.length}>
+  <SectionHeader title={t('resume.interests')} count={interests.length} sectionId="interests">
     <section class="interests-grid">
       {#each interests as interest}
         <div class="interest-item">

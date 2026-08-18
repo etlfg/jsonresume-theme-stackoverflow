@@ -58,7 +58,7 @@
   </header>
 
   {#if basics.summary}
-    <SectionHeader title={t('resume.summary')}>
+    <SectionHeader title={t('resume.summary')} sectionId="basics">
       <section class="main-summary">
         <div><FormattedText text={basics.summary} /></div>
       </section>

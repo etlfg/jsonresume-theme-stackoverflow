@@ -10,7 +10,7 @@
 </script>
 
 {#if certificates?.length}
-  <SectionHeader title={t('resume.certificates')} count={certificates.length}>
+  <SectionHeader title={t('resume.certificates')} count={certificates.length} sectionId="certificates">
     <section id="certificates">
       {#each certificates as cert}
         <TimelineItem
