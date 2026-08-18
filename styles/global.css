@@ -25,15 +25,15 @@
   /* Line heights — multiples of 4 against base */
   --lh-tight: 1.2;
   --lh-snug: 1.4;
-  --lh-base: 1.6; /* Increased from 1.5 for better readability in PDF */
+  --lh-base: 1.5; /* Reverted to 1.5 for exact HTML match and tighter vertical rhythm */
 
   /* Spacing — 8pt grid */
   --sp-1: 0.286rem;  /*  4px */
   --sp-2: 0.571rem;  /*  8px */
   --sp-3: 0.857rem;  /* 12px */
   --sp-4: 1.143rem;  /* 16px */
-  --sp-5: 2.286rem;  /* Increased from 1.714rem (24px -> 32px) for better gaps */
-  --sp-6: 2.857rem;  /* Increased from 2.286rem */
+  --sp-5: 1.714rem;  /* Reverted to 24px */
+  --sp-6: 2.286rem;  /* Reverted to 32px */
 }
 
 /* Variables (dark) */
@@ -65,7 +65,7 @@ p { display: block; }
 a { color: var(--color-link); text-decoration: none; }
 a:hover { color: var(--color-link-hover); text-decoration: underline; }
 li { list-style-type: square; list-style-position: outside; margin-left: 1.3em; margin-bottom: var(--sp-1); }
-h1 { font-size: var(--fs-name); line-height: var(--lh-tight); font-weight: 700; }
+h1 { font-size: var(--fs-name); line-height: var(--lh-tight); font-weight: 700 !important; }
 h2 { font-size: var(--fs-label); line-height: var(--lh-snug); }
 h3 { font-size: var(--fs-card); line-height: var(--lh-snug); }
 em { color: var(--color-text-muted); }
