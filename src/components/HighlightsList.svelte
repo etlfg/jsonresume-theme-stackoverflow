@@ -24,6 +24,7 @@
     padding-left: var(--sp-3);
     margin-top: var(--sp-1);
     line-height: var(--lh-base);
+    list-style: none !important;
   }
 
   .highlights > li::before {
@@ -41,8 +42,8 @@
   }
 
   @media print {
-    .highlights { margin: var(--sp-2) 0 0 0; }
-    .highlights > li { margin-top: var(--sp-1); line-height: var(--lh-snug); }
+    .highlights { margin: var(--sp-2) 0 0 0; list-style: none !important; padding-left: 0; }
+    .highlights > li { margin-top: var(--sp-1); line-height: var(--lh-snug); list-style: none !important; }
     .highlights > li > :global(p) { margin-bottom: var(--sp-1); }
   }
 </style>
