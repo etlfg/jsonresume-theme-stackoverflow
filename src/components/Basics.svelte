@@ -114,10 +114,10 @@
   }
 
   .name {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: var(--header-name-font-size);
+    font-weight: var(--header-name-name-font-weight);
     line-height: 1;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--header-name-letter-spacing);
     color: var(--color-heading);
     margin: 0;
   }
@@ -125,7 +125,7 @@
   .label {
     color: var(--color-accent);
     font-size: var(--fs-label);
-    font-weight: 500;
+    font-weight: var(--header-label-font-weight);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     line-height: 1;
