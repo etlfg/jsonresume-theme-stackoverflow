@@ -63,15 +63,23 @@
 
   @media print {
     .level { margin: 0.5em 0; font-weight: 400; }
-.level em { font-style: normal; padding: 0.1em 0; }
-.level .bar { 
-  display: block !important; 
-  -webkit-print-color-adjust: exact !important;
-  print-color-adjust: exact !important;
-}
-.level .bar::after {
-  -webkit-print-color-adjust: exact !important;
-  print-color-adjust: exact !important;
-}
+    .level em { font-style: normal; padding: 0.1em 0; }
+    .level .bar { 
+      display: block !important; 
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .level .bar::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  .level.beginner .bar::after { background: #FF4D4D !important; }
+    .level.intermediate .bar::after { background: #FFD700 !important; }
+    .level.advanced .bar::after,
+    .level.fluent .bar::after { background: #2ECC71 !important; }
+    .level.master .bar::after,
+    .level.expert .bar::after,
+    .level.native.speaker .bar::after { background: #00A86B !important; }
   }
+
 </style>
