@@ -34,6 +34,8 @@
 
   @media print {
     ul { margin: var(--sp-2) 0 0 0; }
+      margin-top: var(--sp-4) !important;
+    }
     li { 
       display: inline-block !important;
       margin: 2px 4px 2px 0 !important;
@@ -47,10 +49,10 @@
       print-color-adjust: exact !important;
       font-weight: normal !important;
     }
-    ul::before { font-size: var(--fs-body); font-weight: 600; }
-    ul.keywords::before { content: "Skills: "; font-size: var(--fs-body); }
+    ul::before { display: none !important; content: none !important; }
+    ul.keywords::before { display: none !important; content: none !important; }
     :global(.skills-grid) ul::before { content: none; }
-    ul.courses::before { content: "Major courses: "; font-size: var(--fs-body); }
+    ul.courses::before { display: none !important; content: none !important; }
     :global(.skills-grid) .keywords { font-size: var(--fs-meta); margin: 0; }
   }
 </style>
