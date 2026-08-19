@@ -64,8 +64,8 @@
 
   @media print {
     .resume {
-      margin: 0.1em;
-      padding: 0.1em;
+      margin: 0 !important;
+      padding: 0 !important;
       -ms-word-wrap: break-word;
       word-wrap: break-word;
       line-height: 1.25;

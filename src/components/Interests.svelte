@@ -57,7 +57,10 @@
 
   @media print {
     .interests-grid {
-      display: block !important;
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      column-gap: var(--sp-5) !important;
+      row-gap: var(--sp-3) !important;
     }
     .interest-item {
       display: block !important;
