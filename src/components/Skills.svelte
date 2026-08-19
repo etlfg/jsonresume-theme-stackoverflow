@@ -1,7 +1,6 @@
 <script>
   import { t } from '../utils/helpers.ts';
   import SectionHeader from './SectionHeader.svelte';
-  import LevelBar from './LevelBar.svelte';
   import KeywordList from './KeywordList.svelte';
 
   let { skills = [] } = $props();
@@ -14,9 +13,6 @@
         <div class="skill-item">
           {#if skill.name}
             <h3 class="name">{skill.name}</h3>
-          {/if}
-          {#if skill.level}
-            <LevelBar level={skill.level} displayText={skill.levelDisplay} name={skill.name} />
           {/if}
           <KeywordList keywords={skill.keywords} />
         </div>
