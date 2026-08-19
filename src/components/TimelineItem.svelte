@@ -172,10 +172,10 @@
       page-break-inside: avoid !important;
     }
     .item .summary {
-      margin-top: 20px !important;
+      margin-top: var(--sp-2) !important;
     }
     header {
-      margin-bottom: 15px !important;
+      margin-bottom: var(--sp-4) !important;
     }
     .company a { color: var(--color-text); }
     .company::before,

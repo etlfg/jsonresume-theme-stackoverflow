@@ -72,11 +72,6 @@
     .interest-item :global(ul) {
       margin-left: 0 !important;
     }
-    .interest-item :global(*) {
-      margin-left: 0 !important;
-      padding-left: 0 !important;
-      text-align: left !important;
-    }
     .summary {
       display: block !important;
       margin-top: var(--sp-1) !important;
