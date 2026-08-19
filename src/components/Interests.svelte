@@ -66,7 +66,7 @@
       display: block !important;
       text-align: left !important;
       margin-left: 0 !important;
-      padding-left: 0 !important;
+      padding-left: var(--sp-3) !important;
       margin-bottom: var(--sp-3) !important;
     }
     .interest-item :global(*) {
