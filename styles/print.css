@@ -17,7 +17,6 @@
   }
 
   a {
-    color: #007BFF !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -25,6 +24,7 @@
   .keywords a, .keywords span, .courses a, .courses span { 
     color: inherit !important; 
     text-decoration: none !important; 
+    background: transparent !important;
   }
 
   .keywords li, .courses li, [class*="keywords"] li { 
