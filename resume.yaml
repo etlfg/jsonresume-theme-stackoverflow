@@ -1,0 +1,228 @@
+meta:
+  language: en
+  theme: stackoverflow
+  colorScheme: light
+basics:
+  label: Senior DevOps Engineer
+  characterClass: DevOps
+  quote: Sois le changement que tu veux voir dans le monde
+  phone: '0658029960'
+  email: e.tikouirt@gmail.com
+  other:
+    - label: Email personnel
+      flavor: email
+      value: e.tikouirt@free.fr
+  name: Eddy Tikouirt
+  summary: |-
+    Intégrateur d'usine logicielle pendant 2 ans, consultant Cloud & Ops plus d’un an avec une expérience de Dev web fullstack de 2 ans.
+    Missions toutes composées de problématiques DevOps, architecture applicative et infra.
+  picture: https://popcorn-nantes.github.io/media/photos/edouard-tikouirt.jpg
+  location:
+    address: Immeuble Timbia, 10 Route des Artifices Baie Moselle
+    city: Nouméa
+    postalCode: '98800'
+    countryCode: NC
+    region: New Caledonia
+  profiles:
+    - network: LinkedIn
+      username: edouardtikouirt
+      url: https://linkedin.com/in/edouardtikouirt
+projects:
+  - name: Odyssée agro-nomade
+    description: |-
+      Tour du monde de 2-3 ans pour découvrir des cultures, comprendre la résilience et acquérir une expérience pratique
+      en agriculture en contextes multiculturels.
+    startDate: 2022-12
+    endDate: Jul 2026
+    duration: (3 years 7 months)
+    keywords:
+      - agriculture
+      - nomadisme
+      - apprentissage continu
+      - adaptabilité
+      - resilience
+      - veille
+    roles:
+      - Découverte, immersion, partage de différentes cultures en Europe, Asie du Sud-Est et Pacifique
+      - Apprentissage via visite et pratique de l'agriculture dans diverses fermes dans chaque pays visité
+      - Veille technophile
+    type: personal
+work:
+  - company: Akeneo
+    website: https://www.akeneo.com
+    position: Administrateur Système DevOps
+    startDate: 2022-06
+    endDate: Nov 2022
+    duration: (5 months)
+    summary: |-
+      Maintenance en conditions opérationnelles des outils du support IT, déploiement des applications sur des environnements managés,
+      aide à la montée en compétence de l'équipe sur les nouvelles technologies
+    highlights:
+      - Migrated 15+ IT support tools from legacy IaaS to GCP managed services (Cloud Run, Cloud SQL), reducing infra costs 30% and ops overhead 40%
+      - Delivered daily support to 200+ employees on Google Workspace/GitLab/Datadog, maintaining 99.5% uptime and <4h MTTR
+      - Implemented security hardening (mandatory MFA, secret rotation via Vault, Trivy scans in CI) across 5 environments, zero critical findings in audit
+    technologies:
+      - Linux, Docker, Ansible, GCP, Google Workspace, Datadog, Gitlab/Gitlab-CI, Bash, Python, MariaDB, Apache httpd
+  - company: RCA
+    website: https://rca.fr
+    position: Site Reliability Engineer
+    startDate: 2021-12
+    endDate: May 2022
+    duration: (5 months)
+    summary: |-
+      Maintenance en conditions opérationnelles, garant de la plate-forme d'intégration continue, des environnements de développement
+      à la demande et de l'infrastructure globale, du réseau informatique et de la sécurité
+    highlights:
+      - Maintained 99.9% uptime on multi-env Kubernetes platform (Rancher, 12 clusters) for 50+ devs; reduced incident response time 60% via Datadog/Elastic alerting
+      - Refactored on-demand dev environment provisioning (Terraform + Ansible), cutting spin-up time from 45min to 8min and saving 20h/week team effort
+      - Partnered with 5 dev teams to architect CI/CD pipelines (GitLab CI) and migrate 8 services to event-driven Kafka architecture
+    technologies:
+      - Linux, Kubernetes, Docker, Rancher, Ansible, Gitlab/Gitlab-CI, Bash, Go, PostgreSQL, Kafka, ZFS, Proxmox, OPNSense, Elastic, HAProxy, Apache httpd
+  - company: Pôle-Emploi
+    website: https://pole-emploi.fr
+    position: DevOps Integrator
+    startDate: 2019-12
+    endDate: Dec 2021
+    duration: (2 years)
+    summary: Polyvalent DevOps integration in the transversal deployment and support team for development and test tools
+    highlights:
+      - Migrated 12+ containerized apps to private OpenShift cloud, scaling from 50 to 500+ pods with zero-downtime deployments
+      - Expanded GitLab CI/Jenkins pipelines for 30+ microservices; automated security scans (Sonar, OWASP) blocking 200+ vulnerabilities pre-prod
+      - Automated admin tasks via Ansible/Python, eliminating 15h/week manual work on PostgreSQL, XL Deploy, nginx configs
+    technologies:
+      - Linux, Git, Kubernetes, Docker, Vagrant, Bash, Python, Ansible, Gitlab/Gitlab-CI, Jenkins, Bash, Python, PostgreSQL, XL Deploy/Release, nginx, Java, maven, gradle, Sonar
+  - company: Skale-5
+    website: https://www.skale-5.com
+    position: Cloud DevOps Engineer
+    startDate: 2018-05
+    endDate: Aug 2019
+    duration: (1 year 3 months)
+    summary: |-
+      Migration of Mousquetaires group e-commerce web projects to the cloud (Google Cloud Platform),
+      evolution and maintenance in operational conditions
+    highlights:
+      - Built full observability stack (Prometheus/Grafana/APM) monitoring 50+ microservices, reducing MTTR 60% and enabling 99.95% SLA
+      - Automated platform ingress deployment via Terraform/GitLab CI, enabling zero-downtime releases for 200+ e-commerce sites
+      - Maintained cloud-native platform (GKE, Kafka, PostgreSQL) serving 10M+ requests/day with 99.9% uptime during retail peaks
+    technologies:
+      - Linux, Git, GCP, Kubernetes, Docker, Ansible, Terraform, Prometheus, Grafana, Nexus, Vagrant, Rancher, Ansible, Gitlab/Gitlab-CI, Bash, PostgreSQL, Kafka, Elastic, HAProxy, nginx, Sonar
+  - company: Groupe Sewan
+    website: https://www.sewan.fr
+    position: DevOps Engineer
+    startDate: 2017-09
+    endDate: Apr 2018
+    duration: (7 months)
+    summary: Development of a multi-user IaaS-type web service for creating virtual machines on a single VMware infrastructure.
+    highlights:
+      - Architected multi-tenant IaaS platform on VMware (vSphere, vRA), enabling self-service VM provisioning for 500+ internal users
+      - Standardized dev environments via Vagrant/Ansible, reducing onboarding from 2 days to 30min and enforcing consistent tooling across 8 devs
+      - Automated integration test and deployment pipeline (GitLab CI), moving release cycle from weekly to daily with 95% test coverage
+    technologies:
+      - Linux, Git, VueJS/Javascript, Bash, Python, MySQL, Ansible, Gitlab/Gitlab-CI, Elastic, nginx
+  - company: Rcup
+    position: Technical Architect
+    startDate: 2017-02
+    endDate: Aug 2017
+    duration: (6 months)
+    summary: |-
+      Development of a connected insole management application for the acquisition, processing, and presentation
+      of collected data in an agile environment.
+    highlights:
+      - Defined requirements and wrote functional/technical specs for IoT platform processing 10K+ events/day from connected insole sensors
+      - Designed cloud-native architecture (AWS, React/Node.js, MySQL) and implemented CI/CD pipeline (GitLab CI) for automated deployments
+      - Administered Linux infra, wrote automation scripts (Bash/Python), configured production monitoring/alerting
+    technologies:
+      - Linux, Git, React.js, node.js/Javascript, Bash, Gitlab/Gitlab-CI, MySQL, AWS
+  - company: Capgemini
+    position: System Administrator
+    startDate: 2016-01
+    endDate: Jan 2017
+    duration: (1 year)
+    summary: End-of-study project for the development of a connected object management platform in Smart Buildings.
+    highlights:
+      - Administered Linux systems hosting dev tools (GitLab, Jenkins) and configured firewall rules for isolated IoT Smart Building network
+      - Designed data acquisition architecture (Node.js/AngularJS, MongoDB) ingesting 50K+ events/day from 200+ building sensors
+      - Implemented AWS backend services with auto-provisioning via Bash scripts, enabling scalable IoT data processing
+    technologies:
+      - Linux, Git, AngularJS, node.js/Javascript, MongoDB, Gitlab, Bash, MySQL, AWS
+  - company: Signeer Ltd.
+    position: PHP Technical Lead
+    startDate: 2008-06
+    endDate: Sep 2008
+    duration: (3 months)
+    summary: Improvement of a web platform for parking space reservation in a parking management company.
+    highlights:
+      - Built delivery environment (GitLab CI, Linux servers) and configured hosting stack, reducing deployment time from hours to minutes
+      - Migrated legacy PHP parking reservation platform to Laravel, adding 5 features and improving page load time 40%
+      - Automated backup/restore procedures and implemented log aggregation (ELK), reducing incident diagnosis time 70%
+    technologies:
+      - Linux, Git, PHP/Laravel, Bash, bash, Go, MySQL, Apache httpd
+education:
+  - institution: INSA de Rouen
+    area: Information Systems Architecture
+    studyType: Master
+    startDate: '2012'
+    endDate: '2017'
+    duration: (5 years)
+skills:
+  - name: DevOps
+    level: Expert
+    keywords:
+      - Git
+      - Linux
+      - Kubernetes
+      - Docker
+      - GCP
+  - name: CI/CD
+    level: Advanced
+    keywords:
+      - Gitlab-CI
+      - Terraform
+      - Ansible
+      - Jenkins
+  - name: Cloud & Infrastructure
+    level: Advanced
+    keywords:
+      - AWS
+      - GCP
+      - Terraform
+      - Ansible
+      - Prometheus
+      - Grafana
+      - Datadog
+      - Vault
+  - name: Development
+    level: Intermediate
+    keywords:
+      - Python
+      - Bash
+      - Go
+      - JavaScript/Node.js
+      - Java
+      - SQL
+interests:
+  - name: Musique
+    summary: Autodidacte
+    keywords:
+      - Piano
+      - Guitare
+  - name: Nature
+    summary: Jardin du semis à la graine, agroforesterie sur 2 hectares, membre du jardin nourricier de quartier
+    keywords:
+      - Agroforesterie
+      - Potager
+  - name: Cuisine
+    summary: Cuisine familiale du monde
+    keywords:
+      - Familliale
+      - Du monde
+languages:
+  - language: Français
+    level: Natif
+    fluency: Natif
+  - language: Anglais
+    level: Professionel
+    fluency: Professionel
+  - language: Espagnol
+    level: Confirmé
+    fluency: Confirmé
