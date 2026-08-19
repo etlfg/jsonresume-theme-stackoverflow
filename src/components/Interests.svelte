@@ -69,6 +69,9 @@
       padding-left: 0 !important;
       margin-bottom: var(--sp-3) !important;
     }
+    .interest-item :global(ul) {
+      margin-left: 0 !important;
+    }
     .interest-item :global(*) {
       margin-left: 0 !important;
       padding-left: 0 !important;

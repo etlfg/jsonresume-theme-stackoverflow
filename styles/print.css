@@ -46,6 +46,7 @@
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     margin-bottom: var(--sp-4) !important;
+    padding: var(--sp-3) !important;
   }
 
   .section {
@@ -62,5 +63,6 @@
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     color-adjust: exact !important;
+    box-sizing: border-box !important;
   }
 }
