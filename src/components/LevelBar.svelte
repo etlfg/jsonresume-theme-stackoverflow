@@ -62,8 +62,16 @@
   }
 
   @media print {
-    .level { margin: 0.1rem 0; font-weight: 400; }
-    .level em { font-style: normal; padding: 0.1em 0; }
-    .level .bar { display: none; }
+    .level { margin: 0.5em 0; font-weight: 400; }
+.level em { font-style: normal; padding: 0.1em 0; }
+.level .bar { 
+  display: block !important; 
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+.level .bar::after {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
   }
 </style>

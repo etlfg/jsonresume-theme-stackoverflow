@@ -34,8 +34,8 @@
 
   @media print {
     ul { 
-      margin-top: 20px !important; 
-      padding-top: 10px !important;
+      margin-top: var(--sp-5) !important; 
+      padding-top: var(--sp-2) !important;
     }
     li { 
       display: inline-block !important;
@@ -44,7 +44,7 @@
       background-color: var(--color-keyword-bg) !important;
       color: var(--color-keyword-text) !important;
       border: 1px solid var(--color-keyword-border) !important;
-      border-radius: 6px !important;
+      border-radius: 3px !important;
       text-decoration: none !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
