@@ -33,8 +33,9 @@
   }
 
   @media print {
-    ul { margin: var(--sp-2) 0 0 0; }
-      margin-top: var(--sp-4) !important;
+    ul { 
+      margin-top: 20px !important; 
+      padding-top: 10px !important;
     }
     li { 
       display: inline-block !important;
