@@ -7,7 +7,7 @@
 </script>
 
 {#if projects?.length}
-  <SectionHeader title={t('resume.projects')} count={projects.length}>
+  <SectionHeader title={t('resume.projects')} count={projects.length} sectionId="projects">
     <section id="projects">
       {#each projects as project}
         <TimelineItem

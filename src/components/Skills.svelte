@@ -7,7 +7,7 @@
 </script>
 
 {#if skills?.length}
-  <SectionHeader title={t('resume.skills')}>
+  <SectionHeader title={t('resume.skills')} sectionId="skills">
     <section class="skills-grid">
       {#each skills as skill}
         <div class="skill-item">

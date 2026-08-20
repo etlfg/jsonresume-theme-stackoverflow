@@ -10,7 +10,7 @@
 </script>
 
 {#if awards?.length}
-  <SectionHeader title={t('resume.awards')} count={awards.length}>
+  <SectionHeader title={t('resume.awards')} count={awards.length} sectionId="awards">
     <section id="awards">
       {#each awards as award}
         <TimelineItem

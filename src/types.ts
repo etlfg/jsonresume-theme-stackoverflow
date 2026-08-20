@@ -144,3 +144,7 @@ export interface Resume {
   projects?: ProjectEntry[];
   meta?: ThemeMeta;
 }
+
+export interface IconMapping {
+  [key: string]: string;
+}
