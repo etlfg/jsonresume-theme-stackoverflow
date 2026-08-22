@@ -7,8 +7,14 @@
   --color-border: #ccc; --color-border-light: #ddd;
   --color-keyword-text: #2c5777; --color-keyword-bg: #dfeaf1; --color-keyword-border: #dfeaf1;
   --color-reference-border: #ff6d1f;
-  --color-bar-beginner: #eb5f51; --color-bar-intermediate: #ffdf1f;
-  --color-bar-advanced: #5cb85c; --color-bar-master: #59c596;
+  --color-bar-newbie: #9ca3af; --color-bar-intermediate: #d97706;
+  --color-bar-advanced: #059669; --color-bar-master: #e11d48; --color-bar-expert: #1e293b;
+  --color-level-newbie: var(--color-bar-newbie);
+  --color-level-intermediate: var(--color-bar-intermediate);
+  --color-level-advanced: var(--color-bar-advanced);
+  --color-level-master: var(--color-bar-master);
+  --color-level-expert: var(--color-bar-expert);
+  --color-level-native: var(--color-bar-master);
   --color-section-title-bg: #fff;
   --header-bg: var(--color-background-alt);
   --header-border-color: var(--color-accent);
@@ -52,16 +58,22 @@
     --color-border: #3f3f46; --color-border-light: #3f3f46;
     --color-keyword-text: #93c5fd; --color-keyword-bg: #1e3a5f; --color-keyword-border: #1e3a5f;
     --color-reference-border: #fb923c;
-    --color-bar-beginner: #ef4444; --color-bar-intermediate: #eab308;
-    --color-bar-advanced: #22c55e; --color-bar-master: #34d399;
-  --color-section-title-bg: #18181b;
-  --header-bg: var(--color-background-alt);
-  --header-border-color: var(--color-accent);
-  --header-name-font-size: var(--fs-name);
-  --header-name-name-font-weight: 200;
-  --header-name-letter-spacing: -0.015em;
-  --header-label-font-weight: 300;
-  --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    --color-bar-newbie: #9ca3af; --color-bar-intermediate: #d97706;
+    --color-bar-advanced: #059669; --color-bar-master: #e11d48; --color-bar-expert: #1e293b;
+    --color-level-newbie: var(--color-bar-newbie);
+    --color-level-intermediate: var(--color-bar-intermediate);
+    --color-level-advanced: var(--color-bar-advanced);
+    --color-level-master: var(--color-bar-master);
+    --color-level-expert: var(--color-bar-expert);
+    --color-level-native: var(--color-bar-master);
+    --color-section-title-bg: #18181b;
+    --header-bg: var(--color-background-alt);
+    --header-border-color: var(--color-accent);
+    --header-name-font-size: var(--fs-name);
+    --header-name-name-font-weight: 200;
+    --header-name-letter-spacing: -0.015em;
+    --header-label-font-weight: 300;
+    --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
 }
 

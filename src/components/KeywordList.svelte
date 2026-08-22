@@ -1,4 +1,6 @@
 <script>
+  import { normalizeLevel } from '../utils/levels.ts';
+
   let { keywords = [], cssClass = 'keywords' } = $props();
 </script>
 
@@ -6,10 +8,11 @@
   <ul class={cssClass}>
     {#each keywords as keyword}
       {@const k = (typeof keyword === 'object' && keyword.name) ? keyword : { name: keyword }}
+      {@const normalizedLevel = k.level ? normalizeLevel(k.level) : null}
       <li title={k.level ? `${k.name} - ${k.level}` : k.name}>
         <span class="badge-text">{k.name}</span>
-        {#if k.level}
-          <span class="level-dot" style="--level-color: var(--color-level-{k.level.toLowerCase().trim()}, #ccc)" title={k.level}></span>
+        {#if normalizedLevel}
+          <span class="level-dot {normalizedLevel}" style="--level-color: var(--color-level-{normalizedLevel}, #ccc)" title={k.level}></span>
         {/if}
       </li>
     {/each}
@@ -47,13 +50,12 @@
   }
 
   :host {
-    --color-level-newbie: var(--color-bar-beginner, #e5eef2);
-    --color-level-beginner: var(--color-bar-beginner, #e5eef2);
-    --color-level-intermediate: var(--color-bar-intermediate, #22c55e);
-    --color-level-advanced: var(--color-bar-advanced, #3b82f6);
-    --color-level-expert: var(--color-level-expert);
-    --color-level-master: var(--color-level-master);
-    --color-level-native: var(--color-level-native);
+    --color-level-newbie: var(--color-bar-newbie, #9ca3af);
+    --color-level-intermediate: var(--color-bar-intermediate, #d97706);
+    --color-level-advanced: var(--color-bar-advanced, #059669);
+    --color-level-master: var(--color-bar-master, #e11d48);
+    --color-level-expert: var(--color-bar-expert, #1e293b);
+    --color-level-native: var(--color-bar-master, #e11d48);
   }
 
   .badge-text {
@@ -67,6 +69,10 @@
     background-color: var(--level-color);
     display: inline-block;
     flex-shrink: 0;
+  }
+
+  .level-dot.newbie {
+    border: 1px solid var(--color-border);
   }
 
   @media print {
