@@ -10,16 +10,16 @@
 
 <div class="date-atomic">
   {#if startDate}
-    <span class="date-range">
+    <div class="date-range">
       <span class="startDate">{MY(startDate)}</span>
       {#if endDate}
         <span class="endDate">- {MY(endDate)}</span>
       {:else}
-        <span class="endDate">- Current</span>
+        <span class="endDate">- {t('resume.present')}</span>
       {/if}
-    </span>
+    </div>
     {#if duration}
-      <span class="duration-text"> ({duration})</span>
+      <span class="duration-text">({duration})</span>
     {/if}
   {:else if singleDate}
     <span class="date">{singleDate}</span>
@@ -28,10 +28,10 @@
 
 <style>
   .date-atomic {
-    display: inline-flex !important;
-    flex-direction: row !important;
-    align-items: baseline !important;
-    white-space: nowrap !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
     font-size: var(--fs-meta);
     color: var(--color-text-secondary);
     font-weight: 500;
@@ -40,15 +40,29 @@
   }
 
   .date-range {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: var(--sp-1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+  }
+
+  .startDate,
+  .endDate {
+    white-space: nowrap;
   }
 
   .duration-text {
     font-weight: 400;
-    color: var(--color-text-secondary);
-    margin-left: 4px;
+    color: var(--color-text-muted);
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  @media print {
+    .date-atomic {
+      color: var(--color-text-secondary);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
   }
 </style>

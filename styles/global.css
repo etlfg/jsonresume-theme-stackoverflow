@@ -98,12 +98,9 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
   body { line-height: var(--lh-snug); }
   ul { margin-top: var(--sp-2); }
   ul, li { padding: 0; }
+  .timeline-item { break-inside: avoid; }
 }
 
 @media screen and (min-width: 1025px) { li { margin-left: 1.5em; } }
 
-/* Timeline item dates — global so rules apply across scoped child components (DateRange, singleDate) */
-.timeline-item header .date { display: block; font-size: var(--fs-meta); padding: 0; color: var(--color-text-secondary); font-weight: 500; line-height: var(--lh-snug); letter-spacing: 0.02em; }
-@media screen and (max-width: 601px) { .timeline-item header .date { float: none; margin-top: var(--sp-1); } }
-@media screen and (min-width: 602px) { .timeline-item header .date { float: right; padding-top: 0.2em; } }
-@media print { .timeline-item header .date { float: right; padding-top: 0.2em; } }
+/* Timeline item dates — global rules removed; now handled in TimelineItem.svelte scoped styles */

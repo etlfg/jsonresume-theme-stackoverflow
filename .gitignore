@@ -6,6 +6,11 @@ resume.html
 resume.pdf
 resume.json
 index.html
+preview.html
+preview.pdf
+preview.png
+preview-pdf-view.png
+temp_resume.html
 .DS_Store
 /coverage/
 /.build/
