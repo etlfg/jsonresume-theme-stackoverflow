@@ -196,7 +196,7 @@ export function render(resume, options) {
     </style>
     \${head}\${themeOverrides ? '\\n    <style>\\n      ' + themeOverrides + '\\n    </style>' : ''}
   </head>
-  <body>
+  <body class="light">
     \${body}
   </body>
 </html>\`.replace('__LANG__', language);

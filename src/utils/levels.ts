@@ -1,20 +1,21 @@
 /**
- * Normalize any skill/language level string to one of the 4 CSS tiers:
- * beginner, intermediate, advanced, master.
+ * Normalize any skill/language level string to one of the 5 CSS tiers:
+ * newbie, intermediate, advanced, master, expert.
  * Supports synonyms in multiple languages. Falls back to fuzzy matching.
  * Returns the original string lowercased if no match (bar won't render).
  */
 const levelMap: Record<string, string> = {
   // English
-  beginner: "beginner",
-  novice: "beginner",
-  "entry level": "beginner",
-  "entry-level": "beginner",
-  junior: "beginner",
-  elementary: "beginner",
-  basic: "beginner",
-  fundamental: "beginner",
-  starter: "beginner",
+  newbie: "newbie",
+  beginner: "newbie",
+  novice: "newbie",
+  "entry level": "newbie",
+  "entry-level": "newbie",
+  junior: "newbie",
+  elementary: "newbie",
+  basic: "newbie",
+  fundamental: "newbie",
+  starter: "newbie",
 
   intermediate: "intermediate",
   moderate: "intermediate",
@@ -35,19 +36,20 @@ const levelMap: Record<string, string> = {
   strong: "advanced",
 
   master: "master",
-  expert: "master",
   "native speaker": "master",
   native: "master",
   "native or bilingual": "master",
   mastery: "master",
   lead: "master",
   principal: "master",
-  specialist: "master",
-  authority: "master",
+
+  expert: "expert",
+  specialist: "expert",
+  authority: "expert",
 
   // German
-  anfänger: "beginner",
-  grundkenntnisse: "beginner",
+  anfänger: "newbie",
+  grundkenntnisse: "newbie",
   fortgeschritten: "advanced",
   "sehr gut": "advanced",
   fließend: "advanced",
@@ -57,17 +59,17 @@ const levelMap: Record<string, string> = {
   verhandlungssicher: "advanced",
 
   // French
-  débutant: "beginner",
+  débutant: "newbie",
+  notions: "newbie",
   intermédiaire: "intermediate",
   avancé: "advanced",
   courant: "advanced",
   bilingue: "master",
   maîtrise: "master",
-  notions: "beginner",
 
   // Spanish
-  principiante: "beginner",
-  básico: "beginner",
+  principiante: "newbie",
+  básico: "newbie",
   intermedio: "intermediate",
   avanzado: "advanced",
   experto: "master",
@@ -75,8 +77,8 @@ const levelMap: Record<string, string> = {
   dominio: "master",
 
   // Italian
-  base: "beginner",
-  "livello base": "beginner",
+  base: "newbie",
+  "livello base": "newbie",
   "livello intermedio": "intermediate",
   "livello avanzato": "advanced",
   madrelingua: "master",
@@ -86,14 +88,14 @@ const levelMap: Record<string, string> = {
   discreto: "intermediate",
 
   // Portuguese
-  iniciante: "beginner",
+  iniciante: "newbie",
   intermediário: "intermediate",
   avançado: "advanced",
   especialista: "master",
   fluente: "advanced",
 
   // Polish
-  podstawowy: "beginner",
+  podstawowy: "newbie",
   "średnio-zaawansowany": "intermediate",
   zaawansowany: "advanced",
   ekspert: "master",
