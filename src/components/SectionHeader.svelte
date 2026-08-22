@@ -78,5 +78,22 @@
     .section > :global(section > section) { margin: var(--sp-3) 0; }
     .section > :global(section > section:last-of-type) { margin-bottom: 0; }
     .item-count { display: none; }
+
+    /* Prevent section title from being orphaned at page bottom */
+    .section-title {
+      break-after: avoid;
+      break-after: avoid-page;
+    }
+
+    /* Keep section content together with title */
+    .section > *:not(header) {
+      break-inside: avoid;
+    }
+
+    /* Ensure minimum content follows title */
+    .section-title + * {
+      orphans: 3;
+      widows: 3;
+    }
   }
 </style>

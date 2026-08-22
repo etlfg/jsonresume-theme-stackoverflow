@@ -1,5 +1,5 @@
 /* Variables (light) */
-:root {
+::root {
   --color-text: #40484f; --color-text-secondary: #606d76; --color-text-muted: #757575;
   --color-heading: #202931; --color-date: #202931; --color-accent: #ff6d1f;
   --color-link: #0095ff; --color-link-hover: #0c65a5;
@@ -7,14 +7,8 @@
   --color-border: #ccc; --color-border-light: #ddd;
   --color-keyword-text: #2c5777; --color-keyword-bg: #dfeaf1; --color-keyword-border: #dfeaf1;
   --color-reference-border: #ff6d1f;
-  --color-bar-newbie: #9ca3af; --color-bar-intermediate: #d97706;
-  --color-bar-advanced: #059669; --color-bar-master: #e11d48; --color-bar-expert: #1e293b;
-  --color-level-newbie: var(--color-bar-newbie);
-  --color-level-intermediate: var(--color-bar-intermediate);
-  --color-level-advanced: var(--color-bar-advanced);
-  --color-level-master: var(--color-bar-master);
-  --color-level-expert: var(--color-bar-expert);
-  --color-level-native: var(--color-bar-master);
+  --color-bar-beginner: #eb5f51; --color-bar-intermediate: #ffdf1f;
+  --color-bar-advanced: #5cb85c; --color-bar-master: #59c596;
   --color-section-title-bg: #fff;
   --header-bg: var(--color-background-alt);
   --header-border-color: var(--color-accent);
@@ -51,29 +45,18 @@
 /* Variables (dark) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: #d4d4d8; --color-text-secondary: #a1a1aa; --color-text-muted: #9ca3af;
-    --color-heading: #e4e4e7; --color-date: #ffffff; --color-accent: #fb923c;
-    --color-link: #60a5fa; --color-link-hover: #93c5fd;
-    --color-background: #18181b; --color-background-alt: #27272a;
-    --color-border: #3f3f46; --color-border-light: #3f3f46;
-    --color-keyword-text: #93c5fd; --color-keyword-bg: #1e3a5f; --color-keyword-border: #1e3a5f;
-    --color-reference-border: #fb923c;
-    --color-bar-newbie: #9ca3af; --color-bar-intermediate: #d97706;
-    --color-bar-advanced: #059669; --color-bar-master: #e11d48; --color-bar-expert: #1e293b;
-    --color-level-newbie: var(--color-bar-newbie);
-    --color-level-intermediate: var(--color-bar-intermediate);
-    --color-level-advanced: var(--color-bar-advanced);
-    --color-level-master: var(--color-bar-master);
-    --color-level-expert: var(--color-bar-expert);
-    --color-level-native: var(--color-bar-master);
-    --color-section-title-bg: #18181b;
+    --color-text: #e0e6ed; --color-text-secondary: #a0aec0; --color-text-muted: #88929e;
+    --color-heading: #f7fafc; --color-date: #f7fafc; --color-accent: #ff8c42;
+    --color-link: #63b3ed; --color-link-hover: #90cdf4;
+    --color-background: #1a202c; --color-background-alt: #2d3748;
+    --color-border: #4a5568; --color-border-light: #2d3748;
+    --color-keyword-text: #90cdf4; --color-keyword-bg: #2c5282; --color-keyword-border: #2c5282;
+    --color-reference-border: #ff8c42;
+    --color-bar-beginner: #fc8181; --color-bar-intermediate: #f6e05e;
+    --color-bar-advanced: #68d391; --color-bar-master: #81e6d9;
+    --color-section-title-bg: #1a202c;
     --header-bg: var(--color-background-alt);
     --header-border-color: var(--color-accent);
-    --header-name-font-size: var(--fs-name);
-    --header-name-name-font-weight: 200;
-    --header-name-letter-spacing: -0.015em;
-    --header-label-font-weight: 300;
-    --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
 }
 
@@ -110,11 +93,25 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
   body { line-height: var(--lh-snug); }
   ul { margin-top: var(--sp-2); }
   ul, li { padding: 0; }
+  .timeline-item { break-inside: avoid; }
+
+  /* Section title break-avoid — global fallback */
+  .section-title {
+    break-after: avoid;
+    break-after: avoid-page;
+  }
+  .section > *:not(header) {
+    break-inside: avoid;
+  }
+  .section-title + * {
+    orphans: 3;
+    widows: 3;
+  }
 }
 
 @media screen and (min-width: 1025px) { li { margin-left: 1.5em; } }
 
-/* Timeline item dates — global so rules apply across scoped child components (DateRange, singleDate) */
+/* Timeline item dates — global rules removed; now handled in TimelineItem.svelte scoped styles */
 .timeline-item header .date { display: block; font-size: var(--fs-meta); padding: 0; color: var(--color-text-secondary); font-weight: 500; line-height: var(--lh-snug); letter-spacing: 0.02em; }
 @media screen and (max-width: 601px) { .timeline-item header .date { float: none; margin-top: var(--sp-1); } }
 @media screen and (min-width: 602px) { .timeline-item header .date { float: right; padding-top: 0.2em; } }

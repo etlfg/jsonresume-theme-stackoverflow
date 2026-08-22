@@ -1,10 +1,46 @@
-# TODO: Duration Calculator
+# TODO: Section Title Break-Avoid
 
-Implement native duration calculation for resume entries.
+Prevent section titles from being orphaned at page bottom in PDF/print output.
 
 ## Tasks
-- [ ] Create `src/utils/duration.ts` to handle date difference logic.
-- [ ] Implement localized duration strings (e.g., "2 years 3 months" vs "2 ans 3 mois").
-- [ ] Integrate the utility into `src/components/TimelineItem.svelte`.
-- [ ] Ensure durations are calculated at render time without needing pre-processing scripts.
-- [ ] Verify with multiple date formats (YYYY-MM-DD, YYYY-MM, YYYY).
+- [ ] Add `break-after: avoid` to section titles in `SectionHeader.svelte`
+- [ ] Add `break-inside: avoid` to section content containers
+- [ ] Add global print rules in `styles/global.css` for all sections
+- [ ] Ensure minimum content follows title before break (orphans control)
+- [ ] Test with long resume that spans multiple pages
+- [ ] Generate PDF and verify no orphaned titles
+- [ ] Visual audit of `preview-pdf-view.png`
+
+## Technical Approach
+```css
+/* Section title - never break after */
+.section-title {
+  break-after: avoid;
+  break-after: avoid-page;
+}
+
+/* Section content - keep together */
+.section > section,
+.section > div:not(header) {
+  break-inside: avoid;
+}
+
+/* Orphans/widows control */
+.section-title + * {
+  orphans: 3;
+  widows: 3;
+}
+```
+
+## Sections Affected
+- Work Experience
+- Education
+- Skills
+- Projects
+- Volunteer
+- Publications
+- Awards
+- Certificates
+- Languages
+- Interests
+- References
