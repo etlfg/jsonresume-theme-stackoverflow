@@ -1,10 +1,10 @@
 <script>
-  import { normalizeLevel } from '../utils/helpers.ts';
+  import { normalizeLevel } from '../utils/levels.ts';
 
   let { level, displayText = undefined, name = '' } = $props();
 
   const normalized = normalizeLevel(level);
-  const valueNow = normalized === 'beginner' ? 25 : normalized === 'intermediate' ? 50 : (normalized === 'advanced' || normalized === 'fluent') ? 75 : 100;
+  const valueNow = normalized === 'newbie' ? 20 : normalized === 'intermediate' ? 40 : normalized === 'advanced' ? 60 : normalized === 'master' ? 80 : 100;
 </script>
 
 <div class="level {normalized}" role="meter" aria-label="{name ? name + ' level: ' : ''}{displayText || level}" aria-valuemin="0" aria-valuemax="100" aria-valuenow={valueNow}>
@@ -34,36 +34,48 @@
     content: " ";
     top: 0;
     left: 0;
-    background: black;
+    background: var(--color-bar-newbie, #9ca3af);
     height: 5px;
   }
 
-  .level.beginner .bar::after {
-    background: var(--color-bar-beginner);
-    width: 2.5em;
+  .level.newbie .bar::after {
+    background: var(--color-bar-newbie, #9ca3af);
+    width: 2em;
+    border: 1px solid var(--color-border-light);
   }
 
   .level.intermediate .bar::after {
-    background: var(--color-bar-intermediate);
-    width: 5em;
+    background: var(--color-bar-intermediate, #d97706);
+    width: 4em;
   }
 
-  .level.advanced .bar::after,
-  .level.fluent .bar::after {
-    background: var(--color-bar-advanced);
-    width: 7.5em;
+  .level.advanced .bar::after {
+    background: var(--color-bar-advanced, #059669);
+    width: 6em;
   }
 
-  .level.master .bar::after,
+  .level.master .bar::after {
+    background: var(--color-bar-master, #e11d48);
+    width: 8em;
+  }
+
   .level.expert .bar::after,
   .level.native.speaker .bar::after {
-    background: var(--color-bar-master);
+    background: var(--color-bar-expert, #1e293b);
     width: 10em;
   }
 
   @media print {
     .level { margin: 0.1rem 0; font-weight: 400; }
     .level em { font-style: normal; padding: 0.1em 0; }
-    .level .bar { display: none; }
+    .level .bar { 
+      display: block !important; 
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .level .bar::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
   }
 </style>

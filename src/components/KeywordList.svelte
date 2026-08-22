@@ -1,20 +1,18 @@
 <script>
+  import { normalizeLevel } from '../utils/levels.ts';
+
   let { keywords = [], cssClass = 'keywords' } = $props();
 </script>
 
 {#if keywords?.length}
   <ul class={cssClass}>
     {#each keywords as keyword}
-      <li>
-        {#if typeof keyword === 'object' && keyword.name}
-          <span class="badge-text" title={keyword.level ? `${keyword.name} - ${keyword.level}` : keyword.name}>{keyword.name}</span>
-          {#if keyword.level}
-            <span class="level-indicator" style="--level-color: var(--color-level-{keyword.level.toLowerCase()})" title={keyword.level}>
-              {keyword.level}
-            </span>
-          {/if}
-        {:else}
-          <span class="badge-text">{keyword}</span>
+      {@const k = (typeof keyword === 'object' && keyword.name) ? keyword : { name: keyword }}
+      {@const normalizedLevel = k.level ? normalizeLevel(k.level) : null}
+      <li title={k.level ? `${k.name} - ${k.level}` : k.name}>
+        <span class="badge-text">{k.name}</span>
+        {#if normalizedLevel}
+          <span class="level-dot {normalizedLevel}" style="--level-color: var(--color-level-{normalizedLevel}, #ccc)" title={k.level}></span>
         {/if}
       </li>
     {/each}
@@ -52,56 +50,66 @@
   }
 
   :host {
-    --color-level-beginner: var(--color-bar-beginner);
-    --color-level-intermediate: var(--color-bar-intermediate);
-    --color-level-advanced: var(--color-bar-advanced);
-    --color-level-master: var(--color-bar-master);
+    --color-level-newbie: var(--color-bar-newbie, #ffffff);
+    --color-level-intermediate: var(--color-bar-intermediate, #eab308);
+    --color-level-advanced: var(--color-bar-advanced, #22c55e);
+    --color-level-master: var(--color-bar-master, #ef4444);
+    --color-level-expert: var(--color-bar-expert, #000000);
+    --color-level-native: var(--color-bar-master, #ef4444);
   }
 
   .badge-text {
     font-weight: 500;
   }
 
-  .level-indicator {
-    font-size: 0.65em;
-    font-weight: 900;
-    text-transform: uppercase;
-    opacity: 1;
-    border-left: 3px solid var(--level-color, #000) !important;
-    padding-left: 4px;
-    color: var(--level-color, #000) !important;
-    background: rgba(0,0,0,0.05) !important;
+  .level-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--level-color);
     display: inline-block;
-    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .level-dot.newbie {
+    border: 1px solid var(--color-border);
   }
 
   @media print {
     ul { 
-      margin: 0; 
-      display: block; 
+      margin: 0 !important; 
+      display: flex !important; 
+      flex-wrap: wrap !important;
+      gap: 0 !important;
     }
     li { 
-      display: inline-block;
-      margin: 0; 
-      padding: 0; 
-      font-size: var(--fs-meta); 
-      background: transparent; 
-      line-height: var(--lh-snug); 
-      border: none;
-      border-radius: 0;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      padding: 1px 6px !important;
+      margin: 1px 2px 1px 0 !important;
+      font-size: var(--fs-fine) !important;
+      line-height: 1.2 !important;
+      color: var(--color-keyword-text) !important;
+      background-color: var(--color-keyword-bg) !important;
+      border: 1px solid var(--color-keyword-border) !important;
+      border-radius: 3px !important;
+      white-space: nowrap !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
-    li::after { padding: 0 0.4em; content: "·"; color: var(--color-text-muted); }
-    li:last-of-type::after { content: ""; }
+    li::after { content: none !important; }
     .level-indicator { 
       display: inline-block !important; 
-      font-size: 0.8em;
-      opacity: 0.6;
-      border: none;
-      padding: 0 0 0 4px;
-      color: #666 !important;
+      font-size: 0.75em !important;
+      opacity: 1 !important;
+      border-left: 1px solid var(--color-keyword-border) !important;
+      padding-left: 6px !important;
+      color: var(--level-color) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
-    :global(.skills-grid) li::after { padding: 0 0.35em; content: "·"; color: var(--color-text-muted); }
-    :global(.skills-grid) li:last-of-type::after { content: ""; }
+    :global(.skills-grid) li::after { content: none !important; }
     ul::before { font-size: var(--fs-body); font-weight: 600; }
     ul.keywords::before { content: "Skills: "; font-size: var(--fs-body); }
     :global(.skills-grid) ul::before { content: none; }
