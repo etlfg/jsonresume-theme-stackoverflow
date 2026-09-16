@@ -11,12 +11,12 @@
 </script>
 
 {#if publications?.length}
-  <SectionHeader title={t('resume.publications')} count={publications.length}>
+  <SectionHeader title={t('resume.publications')} count={publications.length} sectionId="publications">
     <section id="publications">
       {#each publications as pub}
         <TimelineItem
           title={pub.name}
-          subtitle={pub.publisher ? 'in ' + pub.publisher : ''}
+          subtitle={pub.publisher || ''}
           subtitleClass="publisher"
           url={pub.website}
           singleDate={pub.releaseDate ? MY(pub.releaseDate) : undefined}

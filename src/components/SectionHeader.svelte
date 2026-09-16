@@ -1,10 +1,16 @@
 <script>
-  let { title, count = undefined, children } = $props();
+  import { sectionIcons } from '../utils/icons';
+  let { title, count = undefined, children, sectionId } = $props();
 </script>
 
 <section class="section">
   <header>
-    <h2 class="section-title">{title}{#if count !== undefined} <span class="item-count">({count})</span>{/if}</h2>
+    <h2 class="section-title">
+      {#if sectionId && sectionIcons[sectionId]}
+        <i class="{sectionIcons[sectionId]}" aria-hidden="true"></i>
+      {/if}
+      {title}{#if count !== undefined} <span class="item-count">({count})</span>{/if}
+    </h2>
   </header>
   {@render children()}
 </section>
@@ -40,7 +46,9 @@
   .section-title {
     position: relative;
     z-index: 1;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
     background: var(--color-section-title-bg);
     padding-right: 0.85em;
     color: var(--color-accent);
@@ -50,6 +58,11 @@
     font-size: var(--fs-section);
     line-height: var(--lh-tight);
     letter-spacing: 0.12em;
+  }
+
+  .section-title i {
+    font-size: 1.1em;
+    opacity: 0.9;
   }
 
   @media print {
@@ -65,5 +78,22 @@
     .section > :global(section > section) { margin: var(--sp-3) 0; }
     .section > :global(section > section:last-of-type) { margin-bottom: 0; }
     .item-count { display: none; }
+
+    /* Prevent section title from being orphaned at page bottom */
+    .section-title {
+      break-after: avoid;
+      break-after: avoid-page;
+    }
+
+    /* Keep section content together with title */
+    .section > *:not(header) {
+      break-inside: avoid;
+    }
+
+    /* Ensure minimum content follows title */
+    .section-title + * {
+      orphans: 3;
+      widows: 3;
+    }
   }
 </style>
