@@ -7,8 +7,8 @@
   --color-border: #ccc; --color-border-light: #ddd;
   --color-keyword-text: #2c5777; --color-keyword-bg: #dfeaf1; --color-keyword-border: #dfeaf1;
   --color-reference-border: #ff6d1f;
-  --color-bar-newbie: #9ca3af; --color-bar-intermediate: #d97706;
-  --color-bar-advanced: #059669; --color-bar-master: #e11d48; --color-bar-expert: #1e293b;
+  --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
+  --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
   --color-level-newbie: var(--color-bar-newbie);
   --color-level-intermediate: var(--color-bar-intermediate);
   --color-level-advanced: var(--color-bar-advanced);

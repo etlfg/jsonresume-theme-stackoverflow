@@ -52,10 +52,10 @@
   :host {
     --color-level-newbie: var(--color-bar-newbie, #ffffff);
     --color-level-intermediate: var(--color-bar-intermediate, #eab308);
-    --color-level-advanced: var(--color-bar-advanced, #22c55e);
-    --color-level-master: var(--color-bar-master, #ef4444);
-    --color-level-expert: var(--color-bar-expert, #000000);
-    --color-level-native: var(--color-bar-master, #ef4444);
+    --color-level-advanced: var(--color-bar-advanced, #f97316);
+    --color-level-master: var(--color-bar-master, #059669);
+    --color-level-expert: var(--color-bar-expert, #7c3aed);
+    --color-level-native: var(--color-bar-master, #059669);
   }
 
   .badge-text {
@@ -71,9 +71,7 @@
     flex-shrink: 0;
   }
 
-  .level-dot.newbie {
-    border: 1px solid var(--color-border);
-  }
+  
 
   @media print {
     ul { 
