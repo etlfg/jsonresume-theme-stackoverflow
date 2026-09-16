@@ -1,6 +1,7 @@
 <script>
   import { getDateHelpers } from '../utils/date-helpers.ts';
   import { formatDuration } from '../utils/duration';
+  import { t } from '../utils/helpers.ts';
 
   let { startDate, endDate, singleDate = undefined, language = 'en-gb' } = $props();
 
