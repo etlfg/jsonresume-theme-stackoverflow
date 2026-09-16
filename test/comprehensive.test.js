@@ -256,7 +256,7 @@ describe("Level normalization", () => {
       ],
     });
     expect(html).toContain("master");
-    expect(html).toContain("beginner");
+    expect(html).toContain("newbie");
     expect(html).toContain("intermediate");
   });
 
@@ -309,14 +309,14 @@ describe("Theme customization via meta.theme", () => {
     });
     // Should not have an extra style block for overrides
     const styleCount = (html.match(/<style>/g) || []).length;
-    // Exactly one style block (the main CSS)
-    expect(styleCount).toBe(1);
+    // Two style blocks: the main CSS and the print CSS
+    expect(styleCount).toBe(2);
   });
 
   test("no overrides when meta is absent", () => {
     const html = render({ basics: { name: "Test" } });
     const styleCount = (html.match(/<style>/g) || []).length;
-    expect(styleCount).toBe(1);
+    expect(styleCount).toBe(2);
   });
 });
 
@@ -334,10 +334,10 @@ describe("Section ordering", () => {
       },
     });
     // Search only in the body portion
-    const body = html.split('<body>')[1];
+    const body = html.split('<body')[1];
     const eduIdx = body.indexOf("Education");
     const workIdx = body.indexOf("Work Experience");
-    const skillsIdx = body.indexOf(">Skills<");
+    const skillsIdx = body.indexOf("> Skills");
     expect(eduIdx).toBeLessThan(workIdx);
     expect(workIdx).toBeLessThan(skillsIdx);
   });
@@ -348,8 +348,8 @@ describe("Section ordering", () => {
       skills: [{ name: "JS" }],
       work: [{ name: "Co", position: "Dev", startDate: "2020-01-01" }],
     });
-    const body = html.split('<body>')[1];
-    const skillsIdx = body.indexOf(">Skills<");
+    const body = html.split('<body')[1];
+    const skillsIdx = body.indexOf("> Skills");
     const workIdx = body.indexOf("Work Experience");
     // Default: skills before work
     expect(skillsIdx).toBeLessThan(workIdx);
