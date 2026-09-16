@@ -34,34 +34,34 @@
     content: " ";
     top: 0;
     left: 0;
-    background: var(--color-bar-newbie, #9ca3af);
+    background: var(--color-bar-newbie, #ffffff);
     height: 5px;
   }
 
   .level.newbie .bar::after {
-    background: var(--color-bar-newbie, #9ca3af);
+    background: var(--color-bar-newbie, #ffffff);
     width: 2em;
     border: 1px solid var(--color-border-light);
   }
 
   .level.intermediate .bar::after {
-    background: var(--color-bar-intermediate, #d97706);
+    background: var(--color-bar-intermediate, #eab308);
     width: 4em;
   }
 
   .level.advanced .bar::after {
-    background: var(--color-bar-advanced, #059669);
+    background: var(--color-bar-advanced, #f97316);
     width: 6em;
   }
 
   .level.master .bar::after {
-    background: var(--color-bar-master, #e11d48);
+    background: var(--color-bar-master, #059669);
     width: 8em;
   }
 
   .level.expert .bar::after,
   .level.native.speaker .bar::after {
-    background: var(--color-bar-expert, #1e293b);
+    background: var(--color-bar-expert, #7c3aed);
     width: 10em;
   }
 
