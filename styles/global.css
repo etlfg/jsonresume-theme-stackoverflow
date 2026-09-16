@@ -1,5 +1,5 @@
 /* Variables (light) */
-::root {
+:root {
   --color-text: #40484f; --color-text-secondary: #606d76; --color-text-muted: #757575;
   --color-heading: #202931; --color-date: #202931; --color-accent: #ff6d1f;
   --color-link: #007bff; --color-link-hover: #0056b3;
