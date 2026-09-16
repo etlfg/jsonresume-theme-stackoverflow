@@ -1,57 +1,57 @@
-# Agent Instructions — Left-Aligned Timeline Feature
+# Agent Instructions (v3 - FINAL DELIVERY)
 
-## Goal
-Implement a left-aligned timeline layout inspired by `asymmetric-timeline` theme but with all entries left-aligned (not alternating).
+Welcome! You are working in an isolated feature worktree for the `jsonresume-theme-stackoverflow` project. 
 
-## Design Reference
-- Source: https://registry.jsonresume.org/thomasdavis?theme=asymmetric-timeline
-- Key difference: All timeline cards on the LEFT side of the central line (not alternating left/right)
+## ⚠️ THE QUALITY STANDARD
+"It looks fine" is not a verification. You are required to act as your own harshest critic. You must provide a **Visual Audit** before signaling completion.
 
-## Layout Specification
+## 🛠 Workflow
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        TIMELINE CONTAINER                         │
-│  ┌─────────────┐  ┌─────────────────────────────────────────┐   │
-│  │   DURATION  │  │              EXPERIENCE CARD            │   │
-│  │  (5 months) │  │  ┌────────────────────────────────────┐ │   │
-│  │             │  │  │ Position Title                     │ │   │
-│  └──────●──────┘  │  │  at Company Name                   │ │   │
-│         │         │  │  Summary text...                   │ │   │
-│         │         │  │  ● Highlight 1                     │ │   │
-│         │         │  │  ● Highlight 2                     │ │   │
-│         │         │  │  ● Highlight 3                     │ │   │
-│         │         │  └────────────────────────────────────┘ │   │
-│         ▼         │                                         │   │
-│  ┌─────────────┐  │                                         │   │
-│  │   DURATION  │  │              EXPERIENCE CARD            │   │
-│  │  (2 years)  │  │  ┌────────────────────────────────────┐ │   │
-│  └──────●──────┘  │  │  Position Title                     │ │   │
-│         │         │  │  at Company Name                   │ │   │
-│         ▼         │  └────────────────────────────────────┘ │   │
-│         .         │                                         │   │
-│         .         │                                         │   │
-└─────────────────────────────────────────────────────────────────┘
-```
+### 1. Understand the Goal
+Read `TODO.md` to understand the exact requirements.
 
-## Components to Modify
-1. `src/components/TimelineItem.svelte` - Main layout restructuring
-2. `src/components/DateRange.svelte` - Duration display on left
-3. `styles/global.css` - Timeline line, positioning, responsive
+### 2. Development Cycle
+- **Edit** $\rightarrow$ **Build** (`npm run build`) $\rightarrow$ **Preview** (`node preview.js`) $\rightarrow$ **Screenshot** (`node screenshot.js`).
 
-## Key Requirements
-- Duration left of the central dot/line
-- Title/Company on the right side of the line
-- Central vertical line connecting all dots
-- Left-aligned only (no alternating)
-- Responsive: Stack on mobile (< 768px)
-- Print-friendly with `break-inside: avoid`
-- Maintain existing icons, badges, highlights
+### 3. Mandatory Visual Audit (The "Proof")
+Before you commit and signal completion, you MUST use `read_image` on `preview-pdf-view.png` and write a **Visual Audit Log** in your thought process:
+- **Expected**: "I expect to see a blue background in the header and a FontAwesome briefcase icon next to 'Experience'."
+- **Observed**: "In the image, the background is white and the icon is missing." $\rightarrow$ **RESULT: FAIL. Loop back to Edit.**
+- **Observed**: "The header is blue, and the briefcase icon is correctly aligned. The duration '(3 years)' is visible and styled in grey." $\rightarrow$ **RESULT: PASS.**
 
-## Acceptance Criteria
-- [ ] Duration shows left of vertical line (e.g. "Jun 2022 - Nov 2022 (5 months)")
-- [ ] Vertical line runs through center dots
-- [ ] Experience cards all on right side
-- [ ] Mobile stacks vertically (duration above card)
-- [ ] Print: no page breaks inside cards
-- [ ] Existing tests pass
+### 4. Quality Gate (Strict)
+**Do not signal completion until you have explicitly described the visual evidence in your logs.**
+
+**Completion Criteria:**
+- [ ] Feature works exactly as requested in `TODO.md`.
+- [ ] **Visual Audit Log** provided (Expected vs. Observed).
+- [ ] `preview-pdf-view.png` shows a professional, polished result.
+- [ ] No `!important` hacks; used Svelte styles/CSS variables.
+
+## 📦 Wrap-up & Delivery
+
+Once the feature is visually verified and passed the quality gate, you must finalize your work using the following standards:
+
+### 1. Atomic Commits
+Do not create one giant "fixed everything" commit. Break your changes into **atomic commits**. Each commit should represent a single logical change (e.g., one commit for the utility function, one for the Svelte component, one for the CSS).
+
+### 2. Conventional Commit Messages
+Use the **Conventional Commits** specification for all messages:
+- `feat: ...` (new feature)
+- `fix: ...` (bug fix)
+- `style: ...` (styling changes that don't affect logic)
+- `refactor: ...` (code change that neither fixes a bug nor adds a feature)
+- `docs: ...` (documentation changes)
+
+*Example: `feat(duration): implement localized date difference calculation`*
+
+### 3. Branch Merging
+After committing all changes to your feature branch:
+1. Switch to the `master` branch.
+2. Merge your feature branch into `master` using a merge commit (do not fast-forward if you want to preserve the feature branch history).
+3. Verify that the project still builds and renders correctly on `master`.
+
+## 📂 Key Files
+- `TODO.md` / `AGENTS.md`
+- `resume.yaml` / `preview.js` / `screenshot.js`
+- `preview-pdf-view.png` (The primary source of truth)

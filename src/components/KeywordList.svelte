@@ -37,11 +37,11 @@
     margin: 1px 2px 1px 0;
     font-size: var(--fs-fine);
     line-height: 1.2;
+    white-space: nowrap;
     color: var(--color-keyword-text);
     background-color: var(--color-keyword-bg);
     border: 1px solid var(--color-keyword-border);
     border-radius: 3px;
-    white-space: nowrap;
   }
 
   li:hover {
@@ -77,43 +77,26 @@
 
   @media print {
     ul { 
-      margin: 0 !important; 
-      display: flex !important; 
-      flex-wrap: wrap !important;
-      gap: 0 !important;
+      margin-top: var(--sp-5) !important; 
+      padding-top: var(--sp-2) !important;
     }
     li { 
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 4px !important;
-      padding: 1px 6px !important;
-      margin: 1px 2px 1px 0 !important;
-      font-size: var(--fs-fine) !important;
-      line-height: 1.2 !important;
-      color: var(--color-keyword-text) !important;
+      display: inline-block !important;
+      margin: 2px 4px 2px 0 !important;
+      padding: 2px 6px !important;
       background-color: var(--color-keyword-bg) !important;
+      color: var(--color-keyword-text) !important;
       border: 1px solid var(--color-keyword-border) !important;
       border-radius: 3px !important;
-      white-space: nowrap !important;
+      text-decoration: none !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
+      font-weight: normal !important;
     }
-    li::after { content: none !important; }
-    .level-indicator { 
-      display: inline-block !important; 
-      font-size: 0.75em !important;
-      opacity: 1 !important;
-      border-left: 1px solid var(--color-keyword-border) !important;
-      padding-left: 6px !important;
-      color: var(--level-color) !important;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-    :global(.skills-grid) li::after { content: none !important; }
-    ul::before { font-size: var(--fs-body); font-weight: 600; }
-    ul.keywords::before { content: "Skills: "; font-size: var(--fs-body); }
+    ul::before { display: none !important; content: none !important; }
+    ul.keywords::before { display: none !important; content: none !important; }
     :global(.skills-grid) ul::before { content: none; }
-    ul.courses::before { content: "Major courses: "; font-size: var(--fs-body); }
+    ul.courses::before { display: none !important; content: none !important; }
     :global(.skills-grid) .keywords { font-size: var(--fs-meta); margin: 0; }
   }
 </style>

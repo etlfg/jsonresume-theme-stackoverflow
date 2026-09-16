@@ -121,7 +121,7 @@ function build() {
 import { render as svelteRender } from 'svelte/server';
 import Resume from './components/Resume.js';
 import { setI18nLanguage } from './utils/helpers.js';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -170,6 +170,8 @@ export function render(resume, options) {
   }
   const stylePath = join(__dirname, '..', 'styles', 'global.css');
   const css = readFileSync(stylePath, 'utf-8');
+  const printCssPath = join(__dirname, '..', 'styles', 'print.css');
+  const printCss = existsSync(printCssPath) ? readFileSync(printCssPath, 'utf-8') : '';
   
   const result = svelteRender(Resume, {
     props: { resume, language }
@@ -193,6 +195,9 @@ export function render(resume, options) {
     <link rel="stylesheet" href="./override.css">
     <style>
       \${css}
+    </style>
+    <style>
+      \${printCss}
     </style>
     \${head}\${themeOverrides ? '\\n    <style>\\n      ' + themeOverrides + '\\n    </style>' : ''}
   </head>

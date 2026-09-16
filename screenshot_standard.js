@@ -4,21 +4,21 @@ const path = require('path');
 
 async function capture() {
   try {
-    const htmlFile = path.resolve(process.cwd(), 'preview.html');
-    const screenshotFile = path.resolve(process.cwd(), 'preview.png');
-    const pdfFile = path.resolve(process.cwd(), 'preview.pdf');
+    const htmlFile = path.resolve(process.cwd(), 'preview_standard.html');
+    const screenshotFile = path.resolve(process.cwd(), 'preview_standard.png');
+    const pdfFile = path.resolve(process.cwd(), 'preview_standard.pdf');
 
     if (!fs.existsSync(htmlFile)) {
-      console.error('Error: preview.html not found. Run node preview.js first.');
+      console.error('Error: preview_standard.html not found. Run node preview.js first.');
       process.exit(1);
     }
 
     console.log('Launching browser for visual verification...');
     const browser = await chromium.launch();
-    const context = await browser.newContext({
-      viewport: { width: 1200, height: 1600 }
-    });
-    const page = await context.newPage();
+    const page = await browser.newPage();
+
+    // Set a realistic viewport
+    await page.setViewportSize({ width: 1200, height: 1600 });
 
     await page.goto(`file://${htmlFile}`, { waitUntil: 'networkidle' });
     
@@ -37,11 +37,13 @@ async function capture() {
     });
 
     // We create a PNG of the first page of the PDF for easier OCR/Visual check
-    await page.emulateMedia({ media: 'print' });
-    await page.screenshot({ path: 'preview-pdf-view.png', fullPage: true });
+    // Playwright can't directly "screenshot a PDF", so we use the page.pdf logic 
+    // but we can also just take a screenshot with the 'screen' media emulation
+    await page.emulateMedia({ media: 'screen' });
+    await page.screenshot({ path: 'preview_standard.pdf-view.png', fullPage: true });
 
     await browser.close();
-    console.log(`✅ Visual assets generated: \n- ${screenshotFile}\n- ${pdfFile}\n- preview-pdf-view.png`);
+    console.log(`✅ Visual assets generated: \n- ${screenshotFile}\n- ${pdfFile}\n- preview_standard.pdf-view.png`);
   } catch (error) {
     console.error('Verification failed:', error);
     process.exit(1);

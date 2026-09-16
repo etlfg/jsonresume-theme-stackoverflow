@@ -66,8 +66,8 @@
   }
 
   @media print {
-    .section { margin-bottom: var(--sp-4); padding: 0; }
-    header { margin-bottom: var(--sp-2); }
+    .section { margin-bottom: var(--sp-5); padding: 0; }
+    header { margin-bottom: var(--sp-3); }
     header::after {
       background: #d8d8d8;
       height: 0.5px;

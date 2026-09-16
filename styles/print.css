@@ -1,0 +1,125 @@
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm 2cm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #40484f !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+
+  a {
+    -webkit-print-color-adjust: exact !important;
+    print-webkit-text-fill-color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .keywords a, .keywords span, .courses a, .courses span { 
+    color: inherit !important; 
+    text-decoration: none !important; 
+    background: transparent !important;
+  }
+
+  .keywords li, .courses li, [class*="keywords"] li { 
+    color: #2c5777 !important; 
+    background-color: #dfeaf1 !important; 
+    text-decoration: none !important;
+    border: 0 !important;
+    border-radius: 3px !important;
+  }
+
+  .resume {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .summary, .main-summary {
+    background-color: #E6F2FF !important;
+    margin-bottom: 24px !important;
+    padding: 16px !important;
+  }
+
+  .section {
+    margin-bottom: 24px !important;
+  }
+
+  .section-header {
+    margin-bottom: 12px !important;
+  }
+
+  header {
+    margin-bottom: 24px !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+  }
+
+  .timeline-item {
+    break-inside: avoid !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Vertical Rhythm: Job Title -> Summary spacing */
+  .timeline-item h3 {
+    margin-bottom: 8px !important;
+  }
+
+  .level, .level-bar-container {
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+
+  .level .bar, .level-bar-fill {
+    display: block !important;
+  }
+
+  .level .bar::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Vertical Rhythm: Skill Bar -> Bubbles */
+  .skills-grid {
+    margin-top: 12px !important;
+  }
+
+  .interests-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 24px !important;
+    row-gap: 16px !important;
+    text-align: left !important;
+  }
+
+  .interest-item {
+    display: block !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .skills-grid .skill-item {
+    display: block !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .interest-item :global(ul), .skill-item :global(ul) {
+    margin-left: 0 !important;
+  }
+}

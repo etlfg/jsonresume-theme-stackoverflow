@@ -38,7 +38,7 @@
       "position": "Senior Full Stack Developer",
       "url": "https://piedpiper.com",
       "startDate": "2019-01-01",
-      "endDate": "",
+      "endDate": "2023-12-31",
       "summary": "Leading development of a revolutionary middle-out compression platform serving 2M+ daily active users.",
       "highlights": [
         "Architected microservices migration reducing deployment time by 70%",
@@ -63,7 +63,7 @@
     {
       "name": "Raviga Capital",
       "position": "Junior Developer",
-      "url": "",
+      "url": "https://raviga.example.com",
       "startDate": "2014-09-01",
       "endDate": "2016-05-31",
       "summary": "Built internal tools and dashboards for portfolio management.",
