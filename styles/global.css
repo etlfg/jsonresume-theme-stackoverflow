@@ -10,6 +10,8 @@
   --color-bar-beginner: #eb5f51; --color-bar-intermediate: #ffdf1f;
   --color-bar-advanced: #5cb85c; --color-bar-master: #59c596;
   --color-section-title-bg: #fff;
+  --header-bg: var(--color-background-alt);
+  --header-border-color: var(--color-accent);
   --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
   /* Type scale — 14px base, ~1.14 ratio (subtle, professional) */
@@ -49,6 +51,8 @@
     --color-bar-beginner: #ef4444; --color-bar-intermediate: #eab308;
     --color-bar-advanced: #22c55e; --color-bar-master: #34d399;
     --color-section-title-bg: #18181b;
+    --header-bg: var(--color-background-alt);
+    --header-border-color: var(--color-accent);
     --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
 }
