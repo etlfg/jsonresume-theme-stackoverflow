@@ -8,14 +8,7 @@
 </script>
 
 {#if skills?.length}
-  <SectionHeader title={t('resume.skills')} sectionId="skills">
-    <div class="legend">
-      <span class="legend-item"><span class="dot newbie"></span> Newbie</span>
-      <span class="legend-item"><span class="dot intermediate"></span> Intermediate</span>
-      <span class="legend-item"><span class="dot advanced"></span> Advanced</span>
-      <span class="legend-item"><span class="dot master"></span> Master</span>
-      <span class="legend-item"><span class="dot expert"></span> Expert</span>
-    </div>
+<SectionHeader title={t('resume.skills')} sectionId="skills">
     <section class="skills-grid">
       {#each skills as skill}
         <div class="skill-item">
@@ -26,17 +19,41 @@
         </div>
       {/each}
     </section>
+    <div class="legend">
+      <span class="legend-title">Skill Levels</span>
+      <span class="legend-items">
+        <span class="legend-item"><span class="dot newbie"></span> Newbie</span>
+        <span class="legend-item"><span class="dot intermediate"></span> Intermediate</span>
+        <span class="legend-item"><span class="dot advanced"></span> Advanced</span>
+        <span class="legend-item"><span class="dot master"></span> Master</span>
+        <span class="legend-item"><span class="dot expert"></span> Expert</span>
+      </span>
+    </div>
   </SectionHeader>
 {/if}
 
 <style>
   .legend {
     display: flex;
-    gap: 1rem;
-    margin-bottom: var(--sp-3);
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: var(--sp-4);
     font-size: var(--fs-meta);
     color: var(--color-text-secondary);
     justify-content: flex-start;
+    align-items: center;
+  }
+
+  .legend-title {
+    font-weight: 600;
+    font-size: var(--fs-meta);
+    color: var(--color-text-secondary);
+  }
+
+  .legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     align-items: center;
   }
 
@@ -82,7 +99,11 @@
   @media print {
     .skills-grid { column-gap: var(--sp-4); row-gap: var(--sp-3); }
     .skills-grid .skill-item { display: flex; flex-direction: column; margin: 0; padding: 0; }
-    :global(.level-bar) { margin-bottom: var(--sp-4) !important; }
+:global(.level-bar) { margin-bottom: var(--sp-4) !important; }
+    .dot {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
   }
 
   @media screen and (max-width: 479px) {
