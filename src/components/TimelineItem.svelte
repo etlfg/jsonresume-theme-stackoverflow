@@ -185,19 +185,32 @@
     content: "at ";
   }
 
-  @media print {
-    .timeline-item { margin-top: var(--sp-3); }
+@media print {
+    .timeline-item {
+      margin-top: var(--sp-3);
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+    .header-flex,
+    .item,
+    .summary {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+    .item {
+      overflow: visible;
+    }
     .company a { color: var(--color-text); }
     .company::before,
     .institution::before,
     .organization::before,
     .awarder::before { content: "at "; }
-    :global(.section) :global(p) { margin: 0; padding: 0; }
-    :global(.fa-location-dot):before { padding-left: 0.1em; }
+    .section p { margin: 0; padding: 0; }
+    .fa-location-dot:before { padding-left: 0.1em; }
   }
 
   @media screen and (max-width: 601px) {
-    :global(.section) > section > header { font-size: 1.071rem; }
+    .section > section > header { font-size: 1.071rem; }
     .header-flex {
       flex-direction: column;
       align-items: flex-start;
@@ -209,8 +222,8 @@
     }
   }
   @media screen and (min-width: 1025px) {
-    :global(.section) > section > header .space-left { opacity: 1; cursor: pointer; }
-    :global(.section) > section:not(.main-summary) { margin-left: 1.67rem; }
+    .section > section > header .space-left { opacity: 1; cursor: pointer; }
+    .section > section:not(.main-summary) { margin-left: 1.67rem; }
     .company::before, .institution::before, .organization::before, .awarder::before { content: "| "; }
     .display { display: none; }
     .display:not(.none) { display: block; }
