@@ -1,23 +1,57 @@
-# Agent Instructions — Section Title Break-Avoid Feature
+# Agent Instructions — Left-Aligned Timeline Feature
 
 ## Goal
-Ensure section titles never appear alone at the bottom of a page — they must always have at least one content element following them before a page break, or be pushed to the next page entirely.
+Implement a left-aligned timeline layout inspired by `asymmetric-timeline` theme but with all entries left-aligned (not alternating).
 
-## Problem
-In print/PDF output, section titles (h2) can be orphaned at the bottom of a page with their content starting on the next page. This looks unprofessional.
+## Design Reference
+- Source: https://registry.jsonresume.org/thomasdavis?theme=asymmetric-timeline
+- Key difference: All timeline cards on the LEFT side of the central line (not alternating left/right)
 
-## Solution
-Apply CSS `break-after: avoid` on section titles and `break-inside: avoid` on section content containers, with a minimum content height requirement.
+## Layout Specification
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        TIMELINE CONTAINER                         │
+│  ┌─────────────┐  ┌─────────────────────────────────────────┐   │
+│  │   DURATION  │  │              EXPERIENCE CARD            │   │
+│  │  (5 months) │  │  ┌────────────────────────────────────┐ │   │
+│  │             │  │  │ Position Title                     │ │   │
+│  └──────●──────┘  │  │  at Company Name                   │ │   │
+│         │         │  │  Summary text...                   │ │   │
+│         │         │  │  ● Highlight 1                     │ │   │
+│         │         │  │  ● Highlight 2                     │ │   │
+│         │         │  │  ● Highlight 3                     │ │   │
+│         │         │  └────────────────────────────────────┘ │   │
+│         ▼         │                                         │   │
+│  ┌─────────────┐  │                                         │   │
+│  │   DURATION  │  │              EXPERIENCE CARD            │   │
+│  │  (2 years)  │  │  ┌────────────────────────────────────┐ │   │
+│  └──────●──────┘  │  │  Position Title                     │ │   │
+│         │         │  │  at Company Name                   │ │   │
+│         ▼         │  └────────────────────────────────────┘ │   │
+│         .         │                                         │   │
+│         .         │                                         │   │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ## Components to Modify
-1. `src/components/SectionHeader.svelte` - Add break-avoid to title
-2. `src/components/*.svelte` (section wrappers) - Ensure content follows title
-3. `styles/global.css` - Global print rules for all sections
+1. `src/components/TimelineItem.svelte` - Main layout restructuring
+2. `src/components/DateRange.svelte` - Duration display on left
+3. `styles/global.css` - Timeline line, positioning, responsive
+
+## Key Requirements
+- Duration left of the central dot/line
+- Title/Company on the right side of the line
+- Central vertical line connecting all dots
+- Left-aligned only (no alternating)
+- Responsive: Stack on mobile (< 768px)
+- Print-friendly with `break-inside: avoid`
+- Maintain existing icons, badges, highlights
 
 ## Acceptance Criteria
-- [ ] Section title (h2) has `break-after: avoid`
-- [ ] Section content container has `break-inside: avoid` 
-- [ ] Minimum 2 lines of content must follow title before break
-- [ ] If insufficient space, entire section moves to next page
-- [ ] Works for all sections: Work, Education, Skills, Projects, etc.
-- [ ] Verified in PDF output with `preview.pdf`
+- [ ] Duration shows left of vertical line (e.g. "Jun 2022 - Nov 2022 (5 months)")
+- [ ] Vertical line runs through center dots
+- [ ] Experience cards all on right side
+- [ ] Mobile stacks vertically (duration above card)
+- [ ] Print: no page breaks inside cards
+- [ ] Existing tests pass
