@@ -126,6 +126,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 let language = "en-gb";
+let explicitLanguage = false;
 
 export function changeLanguage(lang) {
   let i18nLang = lang;
@@ -136,6 +137,7 @@ export function changeLanguage(lang) {
   }
   setI18nLanguage(i18nLang);
   language = lang;
+  explicitLanguage = true;
 }
 
 function buildThemeOverrides(meta) {
@@ -165,7 +167,8 @@ function buildThemeOverrides(meta) {
 }
 
 export function render(resume, options) {
-  const lang = (options && options.language) || resume?.basics?.language || resume?.meta?.language || 'en-gb';
+  const lang = (options && options.language) || (explicitLanguage ? language : null) || resume?.basics?.language || resume?.meta?.language || 'en-gb';
+  explicitLanguage = false;
   changeLanguage(lang);
   const stylePath = join(__dirname, '..', 'styles', 'global.css');
   const css = readFileSync(stylePath, 'utf-8');
