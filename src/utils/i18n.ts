@@ -15,6 +15,7 @@ const resources: I18nResources = {
     "resume.publications": "Publications",
     "resume.interests": "Interests",
     "resume.references": "References",
+    "resume.present": "Present",
   },
   de: {
     "resume.separator": "bei ",
@@ -30,6 +31,7 @@ const resources: I18nResources = {
     "resume.publications": "Veröffentlichungen",
     "resume.interests": "Interessen",
     "resume.references": "Empfehlungen",
+    "resume.present": "Gegenwart",
   },
   fr: {
     "resume.separator": "à ",
