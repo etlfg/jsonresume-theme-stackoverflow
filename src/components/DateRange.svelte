@@ -1,5 +1,6 @@
 <script>
   import { getDateHelpers } from '../utils/date-helpers.ts';
+  import { t } from '../utils/helpers.ts';
 
   let { startDate, endDate, language = 'en-gb' } = $props();
 
@@ -12,7 +13,7 @@
     {#if endDate}
       <span class="endDate">- {MY(endDate)}</span>
     {:else}
-      <span class="endDate">- Current</span>
+      <span class="endDate">- {t('resume.present')}</span>
     {/if}
   </div>
 {/if}
