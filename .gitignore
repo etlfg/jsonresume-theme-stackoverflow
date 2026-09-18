@@ -12,3 +12,10 @@ index.html
 docs/dist/
 pnpm-lock.yaml
 style.css
+
+preview.html
+preview.pdf
+preview.png
+preview-pdf-view.png
+resume.yaml
+page_render-*.png
