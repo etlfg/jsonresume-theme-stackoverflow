@@ -40,6 +40,7 @@
   --sp-4: 1.143rem;  /* 16px */
   --sp-5: 1.714rem;  /* 24px */
   --sp-6: 2.286rem;  /* 32px */
+  --timeline-date-col: 132px;  /* shared date column width — aligns timeline spines across all sections; 12px headroom over widest date (108px) so dates never wrap in print */
 }
 
 /* Variables (dark) */
@@ -104,3 +105,18 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
 @media screen and (min-width: 1025px) { li { margin-left: 1.5em; } }
 
 /* Timeline item dates — global rules removed; now handled in TimelineItem.svelte scoped styles */
+
+/* Timeline section: fixed date column width (--timeline-date-col) so spines align
+   across all sections. Column 2 (32px) is the connector: spine center at 8px = (32px - 12px date padding) / 2
+   minus a 2px visual bias toward the date (compensates the card's 4px accent border). */
+.timeline-section {
+  display: grid;
+  grid-template-columns: var(--timeline-date-col) 32px minmax(0, 1fr);
+  gap: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-section {
+    display: block;
+  }
+}

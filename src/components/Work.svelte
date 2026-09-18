@@ -8,7 +8,7 @@
 
 {#if work?.length}
   <SectionHeader title={t('resume.workExperience')} count={work.length} sectionId="work">
-    <section id="work">
+    <section id="work" class="timeline-section">
       {#each work as job}
         <TimelineItem
           title={job.position}

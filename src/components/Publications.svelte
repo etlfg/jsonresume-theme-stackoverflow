@@ -12,7 +12,7 @@
 
 {#if publications?.length}
   <SectionHeader title={t('resume.publications')} count={publications.length} sectionId="publications">
-    <section id="publications">
+    <section id="publications" class="timeline-section">
       {#each publications as pub}
         <TimelineItem
           title={pub.name}
