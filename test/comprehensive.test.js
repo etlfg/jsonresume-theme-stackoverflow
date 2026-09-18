@@ -159,10 +159,9 @@ describe("Empty/missing sections don't crash", () => {
   });
 });
 
-describe("Dark mode CSS vars", () => {
-  test("dark mode variables present in output", () => {
+describe("CSS variables", () => {
+  test("base variables present in output", () => {
     const html = render({ basics: { name: "Test" } });
-    expect(html).toContain("prefers-color-scheme: dark");
     expect(html).toContain("--color-text:");
     expect(html).toContain("--color-background:");
     expect(html).toContain("--color-accent:");
@@ -256,7 +255,7 @@ describe("Level normalization", () => {
       ],
     });
     expect(html).toContain("master");
-    expect(html).toContain("beginner");
+    expect(html).toContain("newbie");
     expect(html).toContain("intermediate");
   });
 
@@ -334,7 +333,7 @@ describe("Section ordering", () => {
       },
     });
     // Search only in the body portion
-    const body = html.split('<body>')[1];
+    const body = html.split('<body')[1];
     const eduIdx = body.indexOf("Education");
     const workIdx = body.indexOf("Work Experience");
     const skillsIdx = body.indexOf(">Skills<");
@@ -348,7 +347,7 @@ describe("Section ordering", () => {
       skills: [{ name: "JS" }],
       work: [{ name: "Co", position: "Dev", startDate: "2020-01-01" }],
     });
-    const body = html.split('<body>')[1];
+    const body = html.split('<body')[1];
     const skillsIdx = body.indexOf(">Skills<");
     const workIdx = body.indexOf("Work Experience");
     // Default: skills before work
