@@ -1,9 +1,14 @@
 const { chromium } = require('playwright');
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
 // Usage: node scripts/screenshot.js [datafile]  (default: resume)
-// Output: artifacts/<datafile>.png, artifacts/<datafile>.pdf, artifacts/<datafile>-page-1.png
+// Requires: node scripts/preview.js [datafile] first
+// Output (in artifacts/):
+//   <datafile>.png        - full-page screenshot (screen view)
+//   <datafile>.pdf        - print PDF
+//   <datafile>-page-N.png - exact per-page renders of the PDF (via pdftoppm)
 async function capture() {
   try {
     const datafile = process.argv[2] || 'resume';
@@ -11,7 +16,6 @@ async function capture() {
     const htmlFile = path.join(outputDir, `${datafile}.html`);
     const screenshotFile = path.join(outputDir, `${datafile}.png`);
     const pdfFile = path.join(outputDir, `${datafile}.pdf`);
-    const printViewFile = path.join(outputDir, `${datafile}-page-1.png`);
 
     if (!fs.existsSync(htmlFile)) {
       console.error(`Error: ${htmlFile} not found. Run node scripts/preview.js ${datafile} first.`);
@@ -29,10 +33,10 @@ async function capture() {
     await page.goto(`file://${htmlFile}`, { waitUntil: 'networkidle' });
     await page.waitForTimeout(500);
 
-    console.log('Capturing HTML screenshot...');
+    console.log('Capturing full-page screenshot...');
     await page.screenshot({ path: screenshotFile, fullPage: true });
 
-    console.log('Generating PDF for OCR check...');
+    console.log('Generating print PDF...');
     await page.pdf({
       path: pdfFile,
       format: 'A4',
@@ -40,11 +44,17 @@ async function capture() {
       margin: { top: '0', right: '0', bottom: '0', left: '0' }
     });
 
-    await page.emulateMedia({ media: 'print' });
-    await page.screenshot({ path: printViewFile, fullPage: true });
-
     await browser.close();
-    console.log(`Visual assets generated:\n- ${screenshotFile}\n- ${pdfFile}\n- ${printViewFile}`);
+
+    // Exact per-page renders from the PDF (matches PDF pagination exactly)
+    try {
+      execSync(`pdftoppm -png -r 150 "${pdfFile}" "${path.join(outputDir, datafile + '-page')}"`);
+      console.log(`Per-page renders: ${path.join(outputDir, datafile + '-page-N.png')}`);
+    } catch (e) {
+      console.warn('pdftoppm not available — skipping per-page renders.');
+    }
+
+    console.log(`Visual assets generated:\n- ${screenshotFile}\n- ${pdfFile}\n- ${path.join(outputDir, datafile + '-page-N.png')}`);
   } catch (error) {
     console.error('Verification failed:', error);
     process.exit(1);
