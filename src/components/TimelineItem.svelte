@@ -280,7 +280,7 @@
     }
 
     .item .summary {
-      margin-top: var(--sp-2) !important;
+      margin-top: var(--sp-3) !important;
     }
     :global(.section) :global(p) { margin: 0; padding: 0; }
     :global(.fa-location-dot):before { padding-left: 0.1em; }
