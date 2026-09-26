@@ -3,9 +3,10 @@
  * Renders sample.resume.json using the theme
  */
 const renderer = require('../dist/index');
-const resume = require('./sample.resume.json');
+const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
+const resume = yaml.load(fs.readFileSync(path.join(__dirname, 'standard_devops_fr.yaml'), 'utf8'));
 
 const outDir = path.join(__dirname, 'dist');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
@@ -33,10 +34,11 @@ const lightHtml = html.replace('</head>', `${faviconTag}<style>
     --color-keyword-bg: #e1ecf4;
     --color-keyword-border: #e1ecf4;
     --color-reference-border: #f48024;
-    --color-bar-beginner: #eb5f51;
-    --color-bar-intermediate: #ffdf1f;
-    --color-bar-advanced: #5cb85c;
-    --color-bar-master: #59c596;
+    --color-bar-newbie: #ffffff;
+    --color-bar-intermediate: #eab308;
+    --color-bar-advanced: #f97316;
+    --color-bar-master: #059669;
+    --color-bar-expert: #7c3aed;
     --color-section-title-bg: #ffffff;
   }
 }
@@ -61,10 +63,11 @@ const darkHtml = html.replace('</head>', `${faviconTag}<style>
   --color-keyword-bg: #1e3a5f;
   --color-keyword-border: #1e3a5f;
   --color-reference-border: #fb923c;
-  --color-bar-beginner: #ef4444;
+  --color-bar-newbie: #ffffff;
   --color-bar-intermediate: #eab308;
-  --color-bar-advanced: #22c55e;
-  --color-bar-master: #34d399;
+  --color-bar-advanced: #f97316;
+  --color-bar-master: #059669;
+  --color-bar-expert: #7c3aed;
   --color-section-title-bg: #18181b;
   color-scheme: dark;
 }

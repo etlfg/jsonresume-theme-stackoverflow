@@ -10,5 +10,6 @@ index.html
 /coverage/
 /.build/
 docs/dist/
+preview/
 pnpm-lock.yaml
 style.css
