@@ -33,7 +33,9 @@ https://svelte.dev/e/unresolved_hydratable`,bold,normal):console.warn("https://s
 
   @media print {.section.svelte-1lncexq {margin-bottom:var(--sp-5);padding:0;}header.svelte-1lncexq {margin-bottom:var(--sp-3);}header.svelte-1lncexq::after {background:#d8d8d8;height:0.5px;print-color-adjust:exact;-webkit-print-color-adjust:exact;}.location {padding-bottom:var(--sp-1);}.section.svelte-1lncexq > section > section {margin:var(--sp-3) 0;}.section.svelte-1lncexq > section > section:last-of-type {margin-bottom:0;}.item-count.svelte-1lncexq {display:none;}
 
-    /* Prevent section title from being orphaned at page bottom */.section-title.svelte-1lncexq {break-after:avoid;break-after:avoid-page;}
+    /* Prevent section title from being orphaned at page bottom.
+       Applied to the <header> element (not the h2) \u2014 Chromium only
+       honors break-after: avoid-page on the header box. */.section.svelte-1lncexq > header:where(.svelte-1lncexq) {break-after:avoid-page;}
 
     /* Keep section content together with title */.section.svelte-1lncexq > :where(.svelte-1lncexq):not(header) {break-inside:avoid;}
 
