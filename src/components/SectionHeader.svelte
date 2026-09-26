@@ -79,9 +79,10 @@
     .section > :global(section > section:last-of-type) { margin-bottom: 0; }
     .item-count { display: none; }
 
-    /* Prevent section title from being orphaned at page bottom */
-    .section-title {
-      break-after: avoid;
+    /* Prevent section title from being orphaned at page bottom.
+       Applied to the <header> element (not the h2) — Chromium only
+       honors break-after: avoid-page on the header box. */
+    .section > header {
       break-after: avoid-page;
     }
 
