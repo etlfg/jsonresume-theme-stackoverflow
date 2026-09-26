@@ -31,7 +31,7 @@ Apply CSS `break-after: avoid` on section titles and `break-inside: avoid` on se
 
 ## File Organization Convention (Sep 26 2026)
 - **Generated artifacts** (previews, PDFs, page renders, screenshots) go in `artifacts/` — gitignored, NEVER committed.
-- **Naming:** `<datafile>-<kind>[-<page-N>].<ext>` — `<datafile>.html` (preview), `<datafile>.pdf` (print), `<datafile>.png` (full-page screenshot), `<datafile>-page-N.png` (page renders). `<datafile>` = resume data file basename (e.g. `resume`, `standard_devops_fr`).
-- **Tooling scripts** live in `scripts/` (tracked). Use `node scripts/preview.js [datafile]` then `node scripts/screenshot.js [datafile]`.
+- **Naming:** `<datafile>-<kind>[-<page-N>].<ext>` — `<datafile>.html` (interactive preview), `<datafile>.pdf` (print PDF), `<datafile>.png` (full-page screen screenshot), `<datafile>-page-N.png` (exact per-page renders of the PDF, generated via `pdftoppm`). `<datafile>` = resume data file basename (e.g. `resume`, `standard_devops_fr`).
+- **Tooling scripts** live in `scripts/` (tracked). Use `node scripts/preview.js [datafile]` then `node scripts/screenshot.js [datafile]`. `screenshot.js` requires `pdftoppm` (poppler-utils) for per-page renders.
 - **Repo root** contains only source, config, docs, and data inputs (`resume.yaml` gitignored, `standard_devops_fr.yaml` tracked).
-- Do NOT create new files in repo root. Do NOT invent new artifact names — derive them from the datafile per the naming rule above.
+- Do NOT create new files in repo root. Do NOT invent new artifact names — derive them from the datafile per the naming rule above. Delete stale artifacts when regenerating.
