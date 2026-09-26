@@ -11,7 +11,7 @@
 
 {#if awards?.length}
   <SectionHeader title={t('resume.awards')} count={awards.length} sectionId="awards">
-    <section id="awards">
+    <section id="awards" class="timeline-section">
       {#each awards as award}
         <TimelineItem
           title={award.title}

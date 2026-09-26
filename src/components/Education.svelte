@@ -9,7 +9,7 @@
 
 {#if education?.length}
   <SectionHeader title={t('resume.education')} count={education.length} sectionId="education">
-    <section id="education">
+    <section id="education" class="timeline-section">
       {#each education as edu}
         <TimelineItem
           title={[edu.studyType, edu.area].filter(Boolean).join(' ')}

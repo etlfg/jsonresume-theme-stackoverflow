@@ -337,7 +337,7 @@ describe("Section ordering", () => {
     const body = html.split('<body')[1];
     const eduIdx = body.indexOf("Education");
     const workIdx = body.indexOf("Work Experience");
-    const skillsIdx = body.indexOf("> Skills");
+const skillsIdx = body.indexOf("> Skills");
     expect(eduIdx).toBeLessThan(workIdx);
     expect(workIdx).toBeLessThan(skillsIdx);
   });
@@ -348,7 +348,7 @@ describe("Section ordering", () => {
       skills: [{ name: "JS" }],
       work: [{ name: "Co", position: "Dev", startDate: "2020-01-01" }],
     });
-    const body = html.split('<body')[1];
+const body = html.split('<body')[1];
     const skillsIdx = body.indexOf("> Skills");
     const workIdx = body.indexOf("Work Experience");
     // Default: skills before work

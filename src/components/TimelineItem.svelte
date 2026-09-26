@@ -101,33 +101,61 @@
 </section>
 
 <style>
-.timeline-item {
+/* The item box is transparent to layout: its children (date/connector/card)
+     become grid items of the section's shared column tracks. */
+  .timeline-item {
+    display: contents;
+  }
+
+  /* Row is a subgrid: it reuses the section's columns (auto | 32px | 1fr) so the
+     date column stays dynamic and dots/spine align across all items. Keeping the
+     row as a real box lets break-inside: avoid work in print. */
+  .timeline-row {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+  }
+
+  /* Vertical spacing via card margin (not item padding) so connector rects touch */
+  .timeline-item + .timeline-item .timeline-card {
     margin-top: var(--sp-4);
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
 
-  .timeline-item:first-of-type {
-    margin-top: 0;
-  }
-
-  .timeline-row {
+  /* Central connector with dot — spine at 8px = (32px column - 12px date padding) / 2 - 2px.
+     The 2px bias toward the date compensates the card's 4px accent border so the line
+     reads visually centered between date text and card. */
+  .timeline-connector {
+    flex: none;
     display: flex;
-    gap: var(--sp-3);
-    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
   }
 
-  /* Left column: date & duration */
+  .timeline-connector::before {
+    content: '';
+    position: absolute;
+    left: 6.5px; /* line center at 8px */
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--color-accent);
+    z-index: 0;
+  }
+
+  /* Left column: date & duration - auto width (grid column sizes to widest date) */
   .timeline-date {
-    flex: 0 0 180px;
+    flex: none;
+    width: auto;
     text-align: right;
     padding-top: 0.3em;
+    padding-right: var(--sp-3);
     font-size: var(--fs-meta);
     color: var(--color-text-secondary);
     font-weight: 500;
     line-height: var(--lh-snug);
     letter-spacing: 0.02em;
-    white-space: nowrap;
   }
 
   .timeline-date .date-atomic {
@@ -137,66 +165,34 @@
     gap: 2px;
   }
 
-  .timeline-date .date-range {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1px;
-  }
-
-  .timeline-date .duration-text {
-    font-weight: 400;
-    color: var(--color-text-muted);
-    font-size: 0.9em;
-    margin-left: 0;
-  }
-
-  /* Central connector with dot */
-  .timeline-connector {
-    flex: 0 0 24px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-
-  .timeline-connector::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background-color: var(--color-accent);
-    transform: translateX(-50%);
-    z-index: 0;
-  }
-
-  .timeline-item:last-of-type .timeline-connector::before {
-    bottom: 50%;
-  }
-
   .timeline-dot {
     position: relative;
     z-index: 1;
     width: 14px;
     height: 14px;
+    margin-top: 0.3em; /* Vertically align dot with the date text */
+    margin-left: 1px; /* dot center at 8px = spine center */
     border-radius: 50%;
     background-color: var(--color-accent);
-    border: 3px solid var(--color-background);
+    border: 3px solid var(--color-background);  /* White border for light theme */
     box-shadow: 0 0 0 3px var(--color-accent);
     flex-shrink: 0;
   }
 
-  /* Right column: experience card */
+  /* Right column: experience card - LIGHT THEME: white card with accent left border */
   .timeline-card {
     flex: 1;
-    min-width: 0;
     background: var(--color-background);
     border: 1px solid var(--color-border);
     border-left: 4px solid var(--color-accent);
     border-radius: 0 8px 8px 0;
     padding: var(--sp-3) var(--sp-4);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Last card: no margin so connector line stops at card bottom */
+  .timeline-item:last-of-type .timeline-card {
+    margin-top: 0;
   }
 
   .card-header {
@@ -250,39 +246,31 @@
   /* Print styles */
   @media print {
     .timeline-item {
-      margin-top: var(--sp-3);
       break-inside: avoid;
       page-break-inside: avoid;
     }
 
     .timeline-row {
-      display: flex;
+      break-inside: avoid;
     }
 
     .timeline-connector::before {
-      background-color: var(--color-accent);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
     .timeline-dot {
-      background-color: var(--color-accent);
-      border-color: var(--color-background);
-      box-shadow: 0 0 0 3px var(--color-accent);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
     .timeline-card {
-      border: 1px solid var(--color-border);
-      border-left: 4px solid var(--color-accent);
       box-shadow: none;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
     .timeline-date {
-      color: var(--color-text-secondary);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -300,7 +288,12 @@
 
   /* Mobile: stack vertically */
   @media screen and (max-width: 768px) {
+    .timeline-item {
+      display: block;
+    }
+
     .timeline-row {
+      display: flex;
       flex-direction: column;
       align-items: stretch;
       gap: 0;

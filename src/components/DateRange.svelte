@@ -31,10 +31,10 @@
   .date-atomic {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 2px;
     font-size: var(--fs-meta);
-    color: var(--color-text-secondary);
+    color: var(--color-date);
     font-weight: 500;
     line-height: var(--lh-snug);
     letter-spacing: 0.02em;
@@ -43,25 +43,25 @@
   .date-range {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 1px;
   }
 
   .startDate,
   .endDate {
-    white-space: nowrap;
+     /* Allow text to wrap within the fixed date column */
   }
 
   .duration-text {
     font-weight: 400;
     color: var(--color-text-muted);
     font-size: 0.9em;
-    white-space: nowrap;
+    
   }
 
   @media print {
     .date-atomic {
-      color: var(--color-text-secondary);
+      color: var(--color-date);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
