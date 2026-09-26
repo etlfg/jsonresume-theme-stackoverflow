@@ -28,3 +28,10 @@ Apply CSS `break-after: avoid` on section titles and `break-inside: avoid` on se
 - [x] Removed conflicting break-before/after rules from `global.css`, `TimelineItem.svelte`, `SectionHeader.svelte`
 - [x] Removed 6px orange `border-left` from section headers (visual cleanup)
 - [x] Verified: Odyssée agro-nomade + DevOps Integrator items complete on single pages
+
+## File Organization Convention (Sep 26 2026)
+- **Generated artifacts** (previews, PDFs, page renders, screenshots) go in `artifacts/` — gitignored, NEVER committed.
+- **Naming:** `<datafile>-<kind>[-<page-N>].<ext>` — `<datafile>.html` (preview), `<datafile>.pdf` (print), `<datafile>.png` (full-page screenshot), `<datafile>-page-N.png` (page renders). `<datafile>` = resume data file basename (e.g. `resume`, `standard_devops_fr`).
+- **Tooling scripts** live in `scripts/` (tracked). Use `node scripts/preview.js [datafile]` then `node scripts/screenshot.js [datafile]`.
+- **Repo root** contains only source, config, docs, and data inputs (`resume.yaml` gitignored, `standard_devops_fr.yaml` tracked).
+- Do NOT create new files in repo root. Do NOT invent new artifact names — derive them from the datafile per the naming rule above.
