@@ -165,8 +165,9 @@ function buildThemeOverrides(meta) {
 }
 
 export function render(resume, options) {
-  if (options && options.language) {
-    changeLanguage(options.language);
+  const lang = (options && options.language) || resume.meta?.language;
+  if (lang) {
+    changeLanguage(lang);
   }
   const stylePath = join(__dirname, '..', 'styles', 'global.css');
   const css = readFileSync(stylePath, 'utf-8');
