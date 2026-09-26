@@ -22,11 +22,11 @@
     <div class="legend">
       <span class="legend-title">Skill Levels</span>
       <span class="legend-items">
-        <span class="legend-item"><span class="dot newbie"></span> Newbie</span>
-        <span class="legend-item"><span class="dot intermediate"></span> Intermediate</span>
-        <span class="legend-item"><span class="dot advanced"></span> Advanced</span>
-        <span class="legend-item"><span class="dot master"></span> Master</span>
-        <span class="legend-item"><span class="dot expert"></span> Expert</span>
+        <span class="legend-item"><span class="dot newbie"></span> Newbie (Learning)</span>
+        <span class="legend-item"><span class="dot intermediate"></span> Intermediate (Practicing)</span>
+        <span class="legend-item"><span class="dot advanced"></span> Advanced (Proficient)</span>
+        <span class="legend-item"><span class="dot master"></span> Master (Leading)</span>
+        <span class="legend-item"><span class="dot expert"></span> Expert (Pioneering)</span>
       </span>
     </div>
   </SectionHeader>

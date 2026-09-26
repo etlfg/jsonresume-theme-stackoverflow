@@ -269,7 +269,7 @@ skills:
   - name: Dev
     keywords:
       - name: Node.js
-        level: Master
+        level: Intermediate
       - name: Python/Django
         level: Intermediate
       - name: Vue.js
@@ -326,13 +326,13 @@ skills:
       - name: GCP
         level: Master
       - name: Prometheus
-        level: Advanced
+        level: Master
       - name: Grafana
         level: Advanced
       - name: Elastic Stack
         level: Intermediate
       - name: Google Workspace
-        level: Intermediate
+        level: Advanced
       - name: Datadog
         level: Beginner
       - name: Dynatrace
@@ -347,11 +347,11 @@ skills:
   - name: Système & Réseau
     keywords:
       - name: Linux
-        level: Master
+        level: Advanced
       - name: Git
         level: Master
       - name: Bash
-        level: Master
+        level: Advanced
       - name: SSH
         level: Advanced
       - name: Cron
@@ -419,9 +419,9 @@ skills:
   - name: Compétences transversales
     keywords:
       - name: Communication
-        level: Master
-      - name: Agile/Scrum
         level: Advanced
+      - name: Agile/Scrum
+        level: Master
       - name: Technical Documentation
         level: Advanced
       - name: Esprit d'équipe
