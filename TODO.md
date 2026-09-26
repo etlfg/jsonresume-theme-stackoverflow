@@ -64,4 +64,13 @@ Prevent section titles from being orphaned at page bottom in PDF/print output.
 - Languages
 - Interests
 - References
->>>>>>> feature/section-title-break-avoid
+
+## Integration Fix (from main worktree testing — Sep 18)
+
+Bug found during integration: commit `e2c0d3b` introduced `::root {` (invalid CSS selector) in `styles/global.css`. The `:root` block never applied, breaking the light-theme variables. Main patched it (`1e5594c`) but the fix belongs on this branch.
+
+### Task
+- [x] `styles/global.css`: change `::root {` → `:root {`
+- [x] Verify: `npm run build` && `npm test` (all pass)
+- [x] Commit on `feature/section-title-break-avoid`, e.g. `fix(css): correct ::root typo to :root`
+- [x] Verified: branch already has correct `:root` (lines 2, 47) — typo existed only on main, fixed there by `1e5594c`. No change needed.

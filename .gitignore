@@ -17,3 +17,6 @@ temp_resume.html
 docs/dist/
 pnpm-lock.yaml
 style.css
+resume.yaml
+.gitconfig
+verification/
