@@ -1,23 +1,62 @@
 meta:
   language: fr
   theme:
+    # Theme customization properties for Stack Overflow theme
+    # Uncomment and modify any of these to override the default light mode colors
+    # Color variables available in the theme:
+
+    # Primary accent color - Used for section title backgrounds, reference borders, and other accents
+    # Default light mode: #ff6d1f (orange)
     primaryColor: '#ff6d1f'
+
+    # Main text color - Used for body text content
+    # Default light mode: #40484f (dark gray-blue)
     textColor: '#40484f'
+
+    # Secondary text color - Used for company names, dates, locations, and other secondary information
+    # Default light mode: #606d76 (medium gray-blue)
     textSecondaryColor: '#606d76'
+
+    # Heading color - Used for your name, label, and all section titles (Compétences, Expérience professionnelle, etc.)
+    # Default light mode: #202931 (very dark gray-blue)
     headingColor: '#202931'
+
+    # Link color - Used for clickable links (social profiles, websites, etc.)
+    # Default light mode: #0095ff (bright blue)
     linkColor: '#0095ff'
+
+    # Page background color - Main background of the entire resume
+    # Default light mode: #fff (white) - Note: this uses --color-section-title-bg as fallback
     backgroundColor: '#fff'
+
+    # Alternate background color - Used for summary sections (main summary and work experience summaries)
+    # Default light mode: #f1f8ff (very light blue)
     backgroundAltColor: '#f1f8ff'
+
+    # Header background color - Background color for the header section (name, title, contact info)
+    # Default: transparent (uses page background)
     headerBgColor: '#68b6e3'
+
+    # Border color - Used for borders between sections and around elements
+    # Default light mode: #ccc (light gray)
     borderColor: '#ccc'
+
+    # Keyword/skill tag background color - Background color of skill and keyword tags
+    # Default light mode: #dfeaf1 (light blue-gray)
     keywordBgColor: '#dfeaf1'
+
+    # Keyword/skill tag text color - Color of text inside skill and keyword tags
+    # Default light mode: #2c5777 (dark blue-gray)
     keywordTextColor: '#2c5777'
+
+    # Base font family - Font stack used throughout the resume
+    # Default: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
     fontFamily: '"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif'
 basics:
   label: Ingénieur DevOps Confirmé
   characterClass: DevOps
   quote: Sois le changement que tu veux voir dans le monde
-  phone: '808621'
+  phone: "808621"
   email: e.tikouirt@gmail.com
   other:
     - label: Email personnel
@@ -30,30 +69,31 @@ basics:
   location:
     address: Immeuble Timbia, 10 Route des Artifices, Baie Moselle
     city: Nouméa
-    postalCode: '98800'
+    postalCode: "98800"
     countryCode: NC
     region: New Caledonia
   profiles:
     - network: LinkedIn
       username: eddytikouirt
       url: https://linkedin.com/in/eddytikouirt
+
 projects:
   - name: Odyssée agro-nomade
     description: |-
       Tour du monde de 2-3 ans pour découvrir des cultures, comprendre la résilience et acquérir une expérience pratique
       en agriculture en contextes multiculturels.
-    startDate: 2022-12
-    endDate: juillet 2026
+    startDate: "2022-12"
+    endDate: "2026-07"
     roles:
       - Découverte, immersion, partage de différentes cultures en Europe, Asie du Sud-Est et Pacifique
       - Apprentissage via visite et pratique de l'agriculture dans diverses fermes dans chaque pays visité
       - Veille technophile
     type: personal
-    duration: (3 ans 7 mois)
+
   - name: Cloud maison
     description: Projet d'installation des applications courantes quotidiennes sur des serveurs maison.
-    startDate: 2022-12
-    endDate: juillet 2026
+    startDate: "2022-12"
+    endDate: "2026-07"
     keywords:
       - Raspberry Pi
       - Kubernetes
@@ -63,13 +103,14 @@ projects:
       - Ansible
       - k0s
     type: personal
-    duration: (3 ans 7 mois)
+
 work:
   - name: Akeneo
     website: https://www.akeneo.com
     position: Administrateur Système DevOps
-    startDate: 2022-06
-    endDate: novembre 2022
+    location: Lille, France
+    startDate: "2022-06"
+    endDate: "2022-11"
     summary: |
       Maintenance en conditions opérationnelles des outils du support IT, déploiement des applications sur des environnements managés,
       aide à la montée en compétence de l'équipe sur les nouvelles technologies
@@ -79,12 +120,15 @@ work:
       - Implémenté et appliqué des pratiques de sécurité réduits d'un facteur 10 sur une fenêtre glissante de 1 semaine
     technologies:
       - Linux, Docker, Ansible, GCP, Google Workspace, Datadog, Gitlab/Gitlab-CI, Bash, Python, MariaDB, Apache httpd
-    duration: (5 mois)
+
   - name: RCA
     website: https://rca.fr
     position: Site Reliability Engineer
-    startDate: 2021-12
-    endDate: mai 2022
+    location:
+      city: Paris
+      countryCode: FR
+    startDate: "2021-12"
+    endDate: "2022-05"
     summary: |
       Maintenance en conditions opérationnelles, garant de la plate-forme d'intégration continue, des environnements de développement
       à la demande et de l'infrastructure globale, du réseau informatique et de la sécurité
@@ -94,12 +138,13 @@ work:
       - Travaillé avec 5 équipes dev pour architecturer une suite de templates de pipelines CI/CD et migrer 8 services vers une architecture event-driven
     technologies:
       - Linux, Kubernetes, Docker, Rancher, Ansible, Gitlab/Gitlab-CI, Bash, Go, PostgreSQL, Kafka, ZFS, Proxmox, OPNSense, Elastic, HAProxy, Apache httpd
-    duration: (5 mois)
+
   - name: Pôle-Emploi
     website: https://pole-emploi.fr
     position: Intégrateur DevOps
-    startDate: 2019-12
-    endDate: décembre 2021
+    location: Paris, France
+    startDate: "2019-12"
+    endDate: "2021-12"
     summary: Intégration DevOps polyvalente dans l'équipe transversale de déploiement et de support des outils de développement et de test
     highlights:
       - Migré 6+ apps vers le cloud privé, passant de 50 serveurs sur 6 mainframes à 500+ pods sur 10 clusters avec déploiements zero-downtime
@@ -107,12 +152,16 @@ work:
       - Automatisé 10+ tâches d'admin éliminant 15h+/semaine en travail manuel
     technologies:
       - Linux, Git, Kubernetes (PKS), Docker, Vagrant, Bash, Python, Ansible, Gitlab/Gitlab-CI, Jenkins, Bash, Python, PostgreSQL, XL Deploy/Release, nginx, Java, maven, gradle, Sonar
-    duration: (2 ans)
+
   - name: Skale-5
     website: https://www.skale-5.com
     position: Ingénieur Cloud DevOps
-    startDate: 2018-05
-    endDate: août 2019
+    location:
+      city: Nantes
+      region: Pays de la Loire
+      countryCode: FR
+    startDate: "2018-05"
+    endDate: "2019-08"
     summary: |
       Migration des projets web e-commerce du groupe Mousquetaires vers le cloud (Google Cloud Plateform),
       évolution et maintenance en conditions opérationnelles
@@ -122,12 +171,13 @@ work:
       - Maintenu une plateforme cloud-native avec réponse sur incident <2j en équipe de 8-10 ETH plate-forme pour 50 développeurs dans un environnement à 5 déploiements en production / semaine
     technologies:
       - Linux, Git, GCP, Kubernetes, Docker, Ansible, Terraform, Prometheus, Grafana, Nexus, Vagrant, Rancher, Ansible, Gitlab/Gitlab-CI, Bash, PostgreSQL, Kafka, Elastic, HAProxy, nginx, Sonar
-    duration: (1 an 3 mois)
+
   - name: Groupe Sewan
     website: https://www.sewan.fr
     position: Ingénieur DevOps
-    startDate: 2017-09
-    endDate: avril 2018
+    location: Paris, France
+    startDate: "2017-09"
+    endDate: "2018-04"
     summary: Développement d'un service web de type IaaS multi-utilisateurs pour la création de machines virtuelles sur une unique infrastructure VMware.
     highlights:
       - Architecturé plateforme IaaS multi-tenant permettant le provisioning de VMs en self-service pour 500+ machines
@@ -135,12 +185,12 @@ work:
       - Automatisé des pipelines de test d'intégration et le déploiement des applications passant les cycles de releases hebdo à quotidien et passant de 0 à 95% en couverture tests
     technologies:
       - Linux, Git, VueJS/Javascript, Bash, Python, MySQL, Ansible, Gitlab/Gitlab-CI, Elastic, nginx
-    duration: (7 mois)
+
   - name: Rcup
     website: https://www.linkedin.com/posts/atos-and-startup-rcup-create-intelligent-share-6534360313993674752-TUKv/
     position: Architecte technique
-    startDate: 2017-02
-    endDate: août 2017
+    startDate: "2017-02"
+    endDate: "2017-08"
     summary: |
       Développement d'une application de gestion de semelles connectées pour l'acquisition, le traitement, et la présentation
       des données collectées dans un environnement agile.
@@ -150,12 +200,15 @@ work:
       - Administré une infra Linux de 2 serveurs, écrit des scripts d'automatisation réduisant le temps de travail de l'heure à la minute, et configuré le monitoring/alerting services production réduisant les incidents de 100%
     technologies:
       - Linux, Git, React.js, node.js/Javascript, Bash, Gitlab/Gitlab-CI, MySQL, AWS, MQTT
-    duration: (6 mois)
+
   - name: Capgemini
     website: https://www.capgemini.com/fr-fr/
     position: Administrateur Système
-    startDate: 2017-01
-    endDate: juillet 2017
+    location:
+      city: Toulouse
+      countryCode: FR
+    startDate: "2017-01"
+    endDate: "2017-07"
     summary: Projet de fin d'étude pour le développement d'une plate-forme de gestion d'objets connectés dans les Smart Buildings.
     highlights:
       - Administré systèmes la plateforme d'hébergement des outils de dev et l'infrastructure pour une équipe de 8-10 developpeurs
@@ -163,12 +216,13 @@ work:
       - Maintenu une base documentaire qualité ISO9001:2018 de 15 documents mis à jour automatiquement dans l'ordre de la minute
     technologies:
       - Linux, Git, AngularJS, node.js/Javascript, MongoDB, Gitlab, Bash, MySQL, AWS
-    duration: (6 mois)
+
   - name: Signeer Ltd.
     website: https://carparkdirect.co.uk/
     position: Référent Technique PHP
-    startDate: 2016-06
-    endDate: septembre 2016
+    location: London, UK
+    startDate: "2016-06"
+    endDate: "2016-09"
     summary: Amélioration d'une plate-forme web de réservation d'emplacement dans une entreprise de gestion de parkings.
     highlights:
       - Construit un environnement de livraison et configuré une stack d'hébergement réduisant le temps de déploiement de +1h à <5min
@@ -176,147 +230,238 @@ work:
       - Pris en charge une équipe de 2 développeurs et fait tampon avec 1 designer, 1 product owner et 1 data analyst
     technologies:
       - Linux, Git, PHP/Laravel, Bash, bash, Go, MySQL, Apache httpd
-    duration: (3 mois)
+
 education:
   - institution: EFEA, Nantes
     url: https://formation-pays-de-la-loire.chambres-agriculture.fr/
     area: Brevet Professionel d'Exploitation Agricole
     studyType: Formation
-    startDate: 2022-11
-    endDate: octobre 2023
-    courses:
-      - Élevage
-      - Production Ovine
-      - Laitier
-    duration: (11 mois)
+    startDate: "2022-11"
+    endDate: "2023-10"
+    "courses":
+      - "Élevage"
+      - "Production Ovine"
+      - "Laitier"
   - institution: INSA de Rouen
     url: https://www.insa-rouen.fr/
     area: Architecture des Systèmes d'Information
     studyType: Master
-    startDate: '2012'
-    endDate: '2017'
-    courses:
-      - Major - Réseaux Informatique
-      - Architecture Distribuée
-      - Cybersécurité
-    duration: (5 ans)
+    startDate: "2012"
+    endDate: "2017"
+    "courses":
+      - "Major - Réseaux Informatique"
+      - "Architecture Distribuée"
+      - "Cybersécurité"
+
+
 certificates:
   - name: Certified Kubernetes Administrator (CKA)
-    date: 2020-11
+    date: "2020-11"
     issuer: Cloud Native Computing Foundation
     url: https://www.cncf.io/certification/cka/
+
   - name: Google Cloud Professional Architect
-    date: 2019-03
+    date: "2019-03"
     issuer: Google Cloud
     url: https://cloud.google.com/certification/cloud-architect
+
 skills:
-  - name: Sysadmin & Network
-    level: Expert
-    keywords:
-      - Linux
-      - ZFS
-      - BTRFS
-      - Git
-      - Bash
-      - SSH
-      - iptables
-      - Cron
-      - logrotate
-      - LDAP
-      - sysctl
-      - netstat
-      - ip
-      - tcpdump
-      - dnsmasq
-      - WireGuard
-      - IPsec
-      - OpenSSL
-      - brctl
-      - VLAN
-  - name: Ops
-    level: Advanced
-    keywords:
-      - Docker
-      - Kubernetes
-      - Rancher
-      - Helm
-      - Terraform
-      - Ansible
-      - Vagrant
-      - Packer
-      - Cloud-Init
-      - GitLab CI
-      - Jenkins
-      - XL Deploy/Release
-      - Concourse
-      - Prometheus
-      - Grafana
-      - Datadog
-      - Elastic Stack
-      - Sonar
-      - Nexus
-      - Artifactory
-      - Vault
-  - name: Cloud
-    level: Intermediate
-    keywords:
-      - GCP
-      - AWS
-      - Google Workspace
-      - Proxmox
-      - VMWare vSphere
-  - name: Archi
-    level: Intermediate
-    keywords:
-      - RESTful APIs
-      - Kafka
-      - RabbitMQ
-      - Rook-Ceph
-      - PostgreSQL
-      - MySQL
-      - MariaDB
-      - MongoDB
-      - HAProxy
-      - nginx
-      - Apache httpd
-      - Traefik
-      - OPNSense
   - name: Dev
-    level: Beginner
     keywords:
-      - Node.js/JavaScript
-      - Java (Maven/Gradle)
-      - PHP/Laravel
-      - Python/Django
-      - Vue.js
-      - React.js
-      - AngularJS
-  - name: Soft Skills
-    level: Advanced
+      - name: Node.js
+        level: Master
+      - name: Python/Django
+        level: Intermediate
+      - name: Vue.js
+        level: Intermediate
+      - name: React.js
+        level: Intermediate
+      - name: Java
+        level: Beginner
+      - name: Go
+        level: Beginner
+      - name: PHP/Laravel
+        level: Beginner
+      - name: AngularJS
+        level: Beginner
+  - name: DevOps
     keywords:
-      - Agile/Scrum
-      - Technical Documentation
-      - Formation
+      - name: Kubernetes
+        level: Master
+      - name: Docker
+        level: Advanced
+      - name: Ansible
+        level: Advanced
+      - name: GitLab CI
+        level: Advanced
+      - name: Terraform
+        level: Advanced
+      - name: Helm
+        level: Intermediate
+      - name: Vagrant
+        level: Intermediate
+      - name: Jenkins
+        level: Intermediate
+      - name: Nexus
+        level: Intermediate
+      - name: Maven/Gradle
+        level: Intermediate
+      - name: Concourse
+        level: Intermediate
+      - name: Rancher
+        level: Beginner
+      - name: Packer
+        level: Beginner
+      - name: XL Deploy/Release
+        level: Beginner
+      - name: Sonar
+        level: Beginner
+      - name: Artifactory
+        level: Beginner
+      - name: Vault
+        level: Beginner
+
+  - name: Ops
+    keywords:
+      - name: GCP
+        level: Master
+      - name: Prometheus
+        level: Advanced
+      - name: Grafana
+        level: Advanced
+      - name: Elastic Stack
+        level: Intermediate
+      - name: Google Workspace
+        level: Intermediate
+      - name: Datadog
+        level: Beginner
+      - name: Dynatrace
+        level: Beginner
+      - name: AWS
+        level: Beginner
+      - name: Proxmox
+        level: Beginner
+      - name: VMWare vSphere
+        level: Beginner
+
+  - name: Système & Réseau
+    keywords:
+      - name: Linux
+        level: Master
+      - name: Git
+        level: Master
+      - name: Bash
+        level: Master
+      - name: SSH
+        level: Advanced
+      - name: Cron
+        level: Intermediate
+      - name: logrotate
+        level: Intermediate
+      - name: sysctl
+        level: Intermediate
+      - name: netstat
+        level: Intermediate
+      - name: ip
+        level: Intermediate
+      - name: VLAN
+        level: Intermediate
+      - name: ZFS
+        level: Beginner
+      - name: BTRFS
+        level: Beginner
+      - name: iptables
+        level: Beginner
+      - name: LDAP
+        level: Beginner
+      - name: tcpdump
+        level: Beginner
+      - name: dnsmasq
+        level: Beginner
+      - name: WireGuard
+        level: Beginner
+      - name: IPsec
+        level: Beginner
+      - name: OpenSSL
+        level: Beginner
+      - name: brctl
+        level: Beginner
+      - name: OPNSense
+        level: Beginner
+
+  - name: Architecture & Données
+    keywords:
+      - name: RESTful APIs
+        level: Advanced
+      - name: SQL
+        level: Intermediate
+      - name: nginx
+        level: Intermediate
+      - name: Kafka
+        level: Beginner
+      - name: RabbitMQ
+        level: Beginner
+      - name: MQTT
+        level: Beginner
+      - name: Rook-Ceph
+        level: Beginner
+      - name: PostgreSQL
+        level: Beginner
+      - name: MongoDB
+        level: Beginner
+      - name: HAProxy
+        level: Beginner
+      - name: Apache httpd
+        level: Beginner
+      - name: Traefik
+        level: Beginner
+
+  - name: Compétences transversales
+    keywords:
+      - name: Communication
+        level: Master
+      - name: Agile/Scrum
+        level: Advanced
+      - name: Technical Documentation
+        level: Advanced
+      - name: Esprit d'équipe
+        level: Advanced
+      - name: Autonomie
+        level: Advanced
+      - name: Formation
+        level: Intermediate
+      - name: Résolution de problèmes
+        level: Intermediate
+      - name: Gestion d'incidents / On-call
+        level: Intermediate
+      - name: Mentorat
+        level: Beginner
+
 interests:
   - name: Musique
     keywords:
       - Piano
       - Guitare
+
   - name: Nature
     keywords:
       - Agroforesterie
       - Potager
+
   - name: Cuisine
     keywords:
       - Familliale
       - Du monde
+
 languages:
   - language: Français
     level: Native
     fluency: Native
+
   - language: Anglais
     level: Fluent
     fluency: Fluent
+
   - language: Espagnol
     level: Intermediate
     fluency: Intermediate
