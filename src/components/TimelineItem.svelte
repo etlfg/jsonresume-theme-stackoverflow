@@ -217,13 +217,6 @@
     line-height: var(--lh-snug);
   }
 
-  .company::before,
-  .institution::before,
-  .organization::before,
-  .awarder::before {
-    content: "at ";
-  }
-
   .location {
     display: inline-flex;
     align-items: center;
