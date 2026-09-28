@@ -61,26 +61,25 @@
             {/if}
           </div>
         {/if}
+        {#if location}
+          <span class="location">
+            <span class="fa-solid fa-location-dot"></span>
+            {#if typeof location === 'string'}
+              {location}
+            {:else}
+              {#if location.city}
+                <span class="city">{location.city}</span>
+              {/if}
+              {#if location.countryCode}
+                <span class="countryCode">({location.countryCode})</span>
+              {/if}
+              {#if location.region}
+                <span class="region">{location.region}</span>
+              {/if}
+            {/if}
+          </span>
+        {/if}
       </header>
-
-      {#if location}
-        <span class="location">
-          <span class="fa-solid fa-location-dot"></span>
-          {#if typeof location === 'string'}
-            {location}
-          {:else}
-            {#if location.city}
-              <span class="city">{location.city}</span>
-            {/if}
-            {#if location.countryCode}
-              <span class="countryCode">({location.countryCode})</span>
-            {/if}
-            {#if location.region}
-              <span class="region">{location.region}</span>
-            {/if}
-          {/if}
-        </span>
-      {/if}
 
       <KeywordList {keywords} />
 

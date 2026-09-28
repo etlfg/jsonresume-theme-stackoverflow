@@ -22,11 +22,11 @@
     <div class="legend">
       <span class="legend-title">{t('skills.legendTitle')}</span>
       <span class="legend-items">
-        <span class="legend-item"><span class="dot newbie"></span> {t('skills.newbie')} ({t('skills.newbieDesc')})</span>
-        <span class="legend-item"><span class="dot intermediate"></span> {t('skills.intermediate')} ({t('skills.intermediateDesc')})</span>
-        <span class="legend-item"><span class="dot advanced"></span> {t('skills.advanced')} ({t('skills.advancedDesc')})</span>
-        <span class="legend-item"><span class="dot master"></span> {t('skills.master')} ({t('skills.masterDesc')})</span>
-        <span class="legend-item"><span class="dot expert"></span> {t('skills.expert')} ({t('skills.expertDesc')})</span>
+        <span class="legend-item"><span class="dot newbie"></span> {t('skills.newbie')}</span>
+        <span class="legend-item"><span class="dot intermediate"></span> {t('skills.intermediate')}</span>
+        <span class="legend-item"><span class="dot advanced"></span> {t('skills.advanced')}</span>
+        <span class="legend-item"><span class="dot master"></span> {t('skills.master')}</span>
+        <span class="legend-item"><span class="dot expert"></span> {t('skills.expert')}</span>
       </span>
     </div>
   </SectionHeader>
@@ -35,8 +35,8 @@
 <style>
   .legend {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem 1rem;
     margin-top: var(--sp-4);
     font-size: var(--fs-meta);
     color: var(--color-text-secondary);
@@ -52,8 +52,8 @@
 
   .legend-items {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
     align-items: center;
   }
 
@@ -70,7 +70,7 @@
     display: inline-block;
   }
 
-  .dot.newbie { background-color: var(--color-level-newbie); border: 1px solid var(--color-border); }
+  .dot.newbie { background-color: var(--color-level-newbie); border: 1px solid var(--color-text-secondary); }
   .dot.intermediate { background-color: var(--color-level-intermediate); }
   .dot.advanced { background-color: var(--color-level-advanced); }
   .dot.master { background-color: var(--color-level-master); }
