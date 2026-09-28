@@ -192,7 +192,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
     text-decoration: none !important;
   }
 
-  .keywords a, .keywords span, .courses a, .courses span { 
+  .keywords a, .keywords span:not(.level-dot), .courses a, .courses span:not(.level-dot) { 
     color: inherit !important; 
     text-decoration: none !important; 
     background: transparent !important;
@@ -601,7 +601,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
     text-decoration: none !important;
   }
 
-  .keywords a, .keywords span, .courses a, .courses span { 
+  .keywords a, .keywords span:not(.level-dot), .courses a, .courses span:not(.level-dot) { 
     color: inherit !important; 
     text-decoration: none !important; 
     background: transparent !important;
