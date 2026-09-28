@@ -10,6 +10,7 @@
 --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
   --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
   --color-level-newbie: var(--color-bar-newbie);
+  --color-level-newbie-fill: #d1d5db;
   --color-level-intermediate: var(--color-bar-intermediate);
   --color-level-advanced: var(--color-bar-advanced);
   --color-level-master: var(--color-bar-master);
@@ -62,6 +63,7 @@
     --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
     --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
     --color-level-newbie: var(--color-bar-newbie);
+    --color-level-newbie-fill: #d1d5db;
     --color-level-intermediate: var(--color-bar-intermediate);
     --color-level-advanced: var(--color-bar-advanced);
     --color-level-master: var(--color-bar-master);

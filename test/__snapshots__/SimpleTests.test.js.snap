@@ -22,6 +22,7 @@ exports[`SimpleTests Snapshot-test english translation 1`] = `
 --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
   --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
   --color-level-newbie: var(--color-bar-newbie);
+  --color-level-newbie-fill: #d1d5db;
   --color-level-intermediate: var(--color-bar-intermediate);
   --color-level-advanced: var(--color-bar-advanced);
   --color-level-master: var(--color-bar-master);
@@ -74,6 +75,7 @@ exports[`SimpleTests Snapshot-test english translation 1`] = `
     --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
     --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
     --color-level-newbie: var(--color-bar-newbie);
+    --color-level-newbie-fill: #d1d5db;
     --color-level-intermediate: var(--color-bar-intermediate);
     --color-level-advanced: var(--color-bar-advanced);
     --color-level-master: var(--color-bar-master);
@@ -323,7 +325,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
     /* Keep section content together with title */.section.svelte-1lncexq > :where(.svelte-1lncexq):not(header) {break-inside:avoid;}
 
     /* Ensure minimum content follows title */.section-title.svelte-1lncexq + :where(.svelte-1lncexq) {orphans:3;widows:3;}
-  }</style><style id="svelte-18p2gu6">.legend.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.5rem 1rem;margin-top:var(--sp-4);font-size:var(--fs-meta);color:var(--color-text-secondary);justify-content:flex-start;align-items:center;}.legend-title.svelte-18p2gu6 {font-weight:600;font-size:var(--fs-meta);color:var(--color-text-secondary);}.legend-items.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.75rem;align-items:center;}.legend-item.svelte-18p2gu6 {display:flex;align-items:center;gap:4px;}.dot.svelte-18p2gu6 {width:6px;height:6px;border-radius:50%;display:inline-block;}.dot.newbie.svelte-18p2gu6 {background-color:var(--color-level-newbie);border:1px solid var(--color-text-secondary);}.dot.intermediate.svelte-18p2gu6 {background-color:var(--color-level-intermediate);}.dot.advanced.svelte-18p2gu6 {background-color:var(--color-level-advanced);}.dot.master.svelte-18p2gu6 {background-color:var(--color-level-master);}.dot.expert.svelte-18p2gu6 {background-color:var(--color-level-expert);}.skills-grid.svelte-18p2gu6 {display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));column-gap:var(--sp-5);row-gap:var(--sp-3);}.skill-item.svelte-18p2gu6 {padding:0;border-bottom:none;}.name.svelte-18p2gu6 {font-weight:700;font-size:var(--fs-card);line-height:var(--lh-snug);color:var(--color-heading);margin-bottom:var(--sp-1);}
+  }</style><style id="svelte-18p2gu6">.legend.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.5rem 1rem;margin-top:var(--sp-4);font-size:var(--fs-meta);color:var(--color-text-secondary);justify-content:flex-start;align-items:center;}.legend-title.svelte-18p2gu6 {font-weight:600;font-size:var(--fs-meta);color:var(--color-text-secondary);}.legend-items.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.75rem;align-items:center;}.legend-item.svelte-18p2gu6 {display:flex;align-items:center;gap:4px;}.dot.svelte-18p2gu6 {width:6px;height:6px;border-radius:50%;display:inline-block;}.dot.newbie.svelte-18p2gu6 {background-color:var(--color-level-newbie-fill);border:1px solid var(--color-text-secondary);}.dot.intermediate.svelte-18p2gu6 {background-color:var(--color-level-intermediate);}.dot.advanced.svelte-18p2gu6 {background-color:var(--color-level-advanced);}.dot.master.svelte-18p2gu6 {background-color:var(--color-level-master);}.dot.expert.svelte-18p2gu6 {background-color:var(--color-level-expert);}.skills-grid.svelte-18p2gu6 {display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));column-gap:var(--sp-5);row-gap:var(--sp-3);}.skill-item.svelte-18p2gu6 {padding:0;border-bottom:none;}.name.svelte-18p2gu6 {font-weight:700;font-size:var(--fs-card);line-height:var(--lh-snug);color:var(--color-heading);margin-bottom:var(--sp-1);}
 
   @media print {.skills-grid.svelte-18p2gu6 {column-gap:var(--sp-4);row-gap:var(--sp-3);}.skills-grid.svelte-18p2gu6 .skill-item:where(.svelte-18p2gu6) {display:flex;flex-direction:column;margin:0;padding:0;}.level-bar {margin-bottom:var(--sp-4) !important;}.dot.svelte-18p2gu6 {-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
   }
@@ -334,8 +336,9 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
   @media screen and (min-width: 480px) and (max-width: 601px) {.skills-grid.svelte-18p2gu6 {grid-template-columns:repeat(2, minmax(0, 1fr));}
   }</style><style id="svelte-1615qzb">ul.svelte-1615qzb {margin:0;display:flex;flex-wrap:wrap;gap:0;list-style:none;padding:0;}li.svelte-1615qzb {display:inline-flex;align-items:center;gap:4px;padding:1px 6px;margin:1px 2px 1px 0;font-size:var(--fs-fine);line-height:1.2;white-space:nowrap;color:var(--color-keyword-text);background-color:var(--color-keyword-bg);border:1px solid var(--color-keyword-border);border-radius:3px;}li.svelte-1615qzb:hover {background-color:var(--color-keyword-bg-hover, var(--color-keyword-bg));border-color:var(--color-color-keyword-border-hover, var(--color-keyword-border));}:host {--color-level-newbie: var(--color-bar-newbie, #ffffff);--color-level-intermediate: var(--color-bar-intermediate, #eab308);--color-level-advanced: var(--color-bar-advanced, #f97316);--color-level-master: var(--color-bar-master, #059669);--color-level-expert: var(--color-bar-expert, #7c3aed);--color-level-native: var(--color-bar-master, #059669);}.badge-text.svelte-1615qzb {font-weight:500;}.level-dot.svelte-1615qzb {width:6px;height:6px;border-radius:50%;background-color:var(--level-color);display:inline-block;flex-shrink:0;}
 
-  /* Newbie level is white (--color-bar-newbie) — give it a visible border so it
-     stays visible on the white card background, matching the legend's .dot.newbie. */.level-dot.newbie.svelte-1615qzb {border:1px solid var(--color-text-secondary);}
+  /* Newbie level is white (--color-bar-newbie) — give it a light-gray
+     fill plus a dark border so it stays clearly visible on the white
+     card background, matching the legend's .dot.newbie. */.level-dot.newbie.svelte-1615qzb {background-color:var(--color-level-newbie-fill);border:1px solid var(--color-text-secondary);}
 
   
 
@@ -428,6 +431,7 @@ exports[`SimpleTests Snapshot-test german translation 1`] = `
 --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
   --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
   --color-level-newbie: var(--color-bar-newbie);
+  --color-level-newbie-fill: #d1d5db;
   --color-level-intermediate: var(--color-bar-intermediate);
   --color-level-advanced: var(--color-bar-advanced);
   --color-level-master: var(--color-bar-master);
@@ -480,6 +484,7 @@ exports[`SimpleTests Snapshot-test german translation 1`] = `
     --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
     --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
     --color-level-newbie: var(--color-bar-newbie);
+    --color-level-newbie-fill: #d1d5db;
     --color-level-intermediate: var(--color-bar-intermediate);
     --color-level-advanced: var(--color-bar-advanced);
     --color-level-master: var(--color-bar-master);
@@ -729,7 +734,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
     /* Keep section content together with title */.section.svelte-1lncexq > :where(.svelte-1lncexq):not(header) {break-inside:avoid;}
 
     /* Ensure minimum content follows title */.section-title.svelte-1lncexq + :where(.svelte-1lncexq) {orphans:3;widows:3;}
-  }</style><style id="svelte-18p2gu6">.legend.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.5rem 1rem;margin-top:var(--sp-4);font-size:var(--fs-meta);color:var(--color-text-secondary);justify-content:flex-start;align-items:center;}.legend-title.svelte-18p2gu6 {font-weight:600;font-size:var(--fs-meta);color:var(--color-text-secondary);}.legend-items.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.75rem;align-items:center;}.legend-item.svelte-18p2gu6 {display:flex;align-items:center;gap:4px;}.dot.svelte-18p2gu6 {width:6px;height:6px;border-radius:50%;display:inline-block;}.dot.newbie.svelte-18p2gu6 {background-color:var(--color-level-newbie);border:1px solid var(--color-text-secondary);}.dot.intermediate.svelte-18p2gu6 {background-color:var(--color-level-intermediate);}.dot.advanced.svelte-18p2gu6 {background-color:var(--color-level-advanced);}.dot.master.svelte-18p2gu6 {background-color:var(--color-level-master);}.dot.expert.svelte-18p2gu6 {background-color:var(--color-level-expert);}.skills-grid.svelte-18p2gu6 {display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));column-gap:var(--sp-5);row-gap:var(--sp-3);}.skill-item.svelte-18p2gu6 {padding:0;border-bottom:none;}.name.svelte-18p2gu6 {font-weight:700;font-size:var(--fs-card);line-height:var(--lh-snug);color:var(--color-heading);margin-bottom:var(--sp-1);}
+  }</style><style id="svelte-18p2gu6">.legend.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.5rem 1rem;margin-top:var(--sp-4);font-size:var(--fs-meta);color:var(--color-text-secondary);justify-content:flex-start;align-items:center;}.legend-title.svelte-18p2gu6 {font-weight:600;font-size:var(--fs-meta);color:var(--color-text-secondary);}.legend-items.svelte-18p2gu6 {display:flex;flex-wrap:nowrap;gap:0.75rem;align-items:center;}.legend-item.svelte-18p2gu6 {display:flex;align-items:center;gap:4px;}.dot.svelte-18p2gu6 {width:6px;height:6px;border-radius:50%;display:inline-block;}.dot.newbie.svelte-18p2gu6 {background-color:var(--color-level-newbie-fill);border:1px solid var(--color-text-secondary);}.dot.intermediate.svelte-18p2gu6 {background-color:var(--color-level-intermediate);}.dot.advanced.svelte-18p2gu6 {background-color:var(--color-level-advanced);}.dot.master.svelte-18p2gu6 {background-color:var(--color-level-master);}.dot.expert.svelte-18p2gu6 {background-color:var(--color-level-expert);}.skills-grid.svelte-18p2gu6 {display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));column-gap:var(--sp-5);row-gap:var(--sp-3);}.skill-item.svelte-18p2gu6 {padding:0;border-bottom:none;}.name.svelte-18p2gu6 {font-weight:700;font-size:var(--fs-card);line-height:var(--lh-snug);color:var(--color-heading);margin-bottom:var(--sp-1);}
 
   @media print {.skills-grid.svelte-18p2gu6 {column-gap:var(--sp-4);row-gap:var(--sp-3);}.skills-grid.svelte-18p2gu6 .skill-item:where(.svelte-18p2gu6) {display:flex;flex-direction:column;margin:0;padding:0;}.level-bar {margin-bottom:var(--sp-4) !important;}.dot.svelte-18p2gu6 {-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
   }
@@ -740,8 +745,9 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; b
   @media screen and (min-width: 480px) and (max-width: 601px) {.skills-grid.svelte-18p2gu6 {grid-template-columns:repeat(2, minmax(0, 1fr));}
   }</style><style id="svelte-1615qzb">ul.svelte-1615qzb {margin:0;display:flex;flex-wrap:wrap;gap:0;list-style:none;padding:0;}li.svelte-1615qzb {display:inline-flex;align-items:center;gap:4px;padding:1px 6px;margin:1px 2px 1px 0;font-size:var(--fs-fine);line-height:1.2;white-space:nowrap;color:var(--color-keyword-text);background-color:var(--color-keyword-bg);border:1px solid var(--color-keyword-border);border-radius:3px;}li.svelte-1615qzb:hover {background-color:var(--color-keyword-bg-hover, var(--color-keyword-bg));border-color:var(--color-color-keyword-border-hover, var(--color-keyword-border));}:host {--color-level-newbie: var(--color-bar-newbie, #ffffff);--color-level-intermediate: var(--color-bar-intermediate, #eab308);--color-level-advanced: var(--color-bar-advanced, #f97316);--color-level-master: var(--color-bar-master, #059669);--color-level-expert: var(--color-bar-expert, #7c3aed);--color-level-native: var(--color-bar-master, #059669);}.badge-text.svelte-1615qzb {font-weight:500;}.level-dot.svelte-1615qzb {width:6px;height:6px;border-radius:50%;background-color:var(--level-color);display:inline-block;flex-shrink:0;}
 
-  /* Newbie level is white (--color-bar-newbie) — give it a visible border so it
-     stays visible on the white card background, matching the legend's .dot.newbie. */.level-dot.newbie.svelte-1615qzb {border:1px solid var(--color-text-secondary);}
+  /* Newbie level is white (--color-bar-newbie) — give it a light-gray
+     fill plus a dark border so it stays clearly visible on the white
+     card background, matching the legend's .dot.newbie. */.level-dot.newbie.svelte-1615qzb {background-color:var(--color-level-newbie-fill);border:1px solid var(--color-text-secondary);}
 
   
 

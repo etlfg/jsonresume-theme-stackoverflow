@@ -71,9 +71,11 @@
     flex-shrink: 0;
   }
 
-  /* Newbie level is white (--color-bar-newbie) — give it a visible border so it
-     stays visible on the white card background, matching the legend's .dot.newbie. */
+  /* Newbie level is white (--color-bar-newbie) — give it a light-gray
+     fill plus a dark border so it stays clearly visible on the white
+     card background, matching the legend's .dot.newbie. */
   .level-dot.newbie {
+    background-color: var(--color-level-newbie-fill);
     border: 1px solid var(--color-text-secondary);
   }
 
