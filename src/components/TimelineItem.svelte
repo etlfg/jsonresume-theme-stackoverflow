@@ -196,7 +196,11 @@
   }
 
   .card-header {
-    margin-bottom: var(--sp-2);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 6px;
+    margin-bottom: 2px;
   }
 
   .position {
@@ -204,7 +208,7 @@
     font-size: var(--fs-title);
     color: var(--color-heading);
     line-height: var(--lh-snug);
-    margin-bottom: 2px;
+    margin-bottom: 0;
   }
 
   .company,
@@ -221,7 +225,8 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    margin-top: var(--sp-1);
+    margin-top: 0;
+    white-space: nowrap;
     color: var(--color-text-secondary);
     font-weight: 500;
     font-size: var(--fs-meta);

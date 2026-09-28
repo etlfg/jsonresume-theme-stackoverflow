@@ -71,6 +71,12 @@
     flex-shrink: 0;
   }
 
+  /* Newbie level is white (--color-bar-newbie) — give it a border so it stays
+     visible on the white card background, matching the legend's .dot.newbie. */
+  .level-dot.newbie {
+    border: 1px solid var(--color-border);
+  }
+
   
 
   @media print {
@@ -95,6 +101,8 @@
     ul.keywords::before { display: none !important; content: none !important; }
     :global(.skills-grid) ul::before { content: none; }
     ul.courses::before { display: none !important; content: none !important; }
-    :global(.skills-grid) .keywords { font-size: var(--fs-meta); margin: 0; }
+    /* Grid sections (skills/interests): no top gap between category name and badges */
+    :global(.skills-grid) .keywords { font-size: var(--fs-meta); margin: 0 !important; padding-top: 0 !important; }
+    :global(.interests-grid) .keywords { margin: 0 !important; padding-top: 0 !important; }
   }
 </style>
