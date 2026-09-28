@@ -20,6 +20,7 @@ style.css
 resume.yaml
 .gitconfig
 verification/
+preview/
 
 # Generated artifacts (see AGENTS.md convention)
 artifacts/

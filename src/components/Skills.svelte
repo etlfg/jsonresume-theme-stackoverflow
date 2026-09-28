@@ -20,13 +20,13 @@
       {/each}
     </section>
     <div class="legend">
-      <span class="legend-title">Skill Levels</span>
+      <span class="legend-title">{t('skills.legendTitle')}</span>
       <span class="legend-items">
-        <span class="legend-item"><span class="dot newbie"></span> Newbie</span>
-        <span class="legend-item"><span class="dot intermediate"></span> Intermediate</span>
-        <span class="legend-item"><span class="dot advanced"></span> Advanced</span>
-        <span class="legend-item"><span class="dot master"></span> Master</span>
-        <span class="legend-item"><span class="dot expert"></span> Expert</span>
+        <span class="legend-item"><span class="dot newbie"></span> {t('skills.newbie')} ({t('skills.newbieDesc')})</span>
+        <span class="legend-item"><span class="dot intermediate"></span> {t('skills.intermediate')} ({t('skills.intermediateDesc')})</span>
+        <span class="legend-item"><span class="dot advanced"></span> {t('skills.advanced')} ({t('skills.advancedDesc')})</span>
+        <span class="legend-item"><span class="dot master"></span> {t('skills.master')} ({t('skills.masterDesc')})</span>
+        <span class="legend-item"><span class="dot expert"></span> {t('skills.expert')} ({t('skills.expertDesc')})</span>
       </span>
     </div>
   </SectionHeader>
