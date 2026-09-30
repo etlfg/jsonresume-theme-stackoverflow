@@ -70,7 +70,7 @@
     display: inline-block;
   }
 
-  .dot.newbie { background-color: var(--color-level-newbie-fill); border: 1px solid var(--color-text-secondary); }
+  .dot.newbie { background-color: var(--color-level-newbie); border: 1px solid var(--color-border); }
   .dot.intermediate { background-color: var(--color-level-intermediate); }
   .dot.advanced { background-color: var(--color-level-advanced); }
   .dot.master { background-color: var(--color-level-master); }

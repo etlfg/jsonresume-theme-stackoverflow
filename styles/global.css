@@ -10,7 +10,6 @@
 --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
   --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
   --color-level-newbie: var(--color-bar-newbie);
-  --color-level-newbie-fill: #d1d5db;
   --color-level-intermediate: var(--color-bar-intermediate);
   --color-level-advanced: var(--color-bar-advanced);
   --color-level-master: var(--color-bar-master);
@@ -34,6 +33,7 @@
   --fs-meta: 0.929rem;       /* 13px (date, location, keywords) */
   --fs-section: 0.9rem;      /* Increased from 0.857rem */
   --fs-fine: 0.786rem;       /* 11px */
+  --fs-micro: 0.643rem;      /* 9px (header address) */
 
   /* Line heights — multiples of 4 against base */
   --lh-tight: 1.2;
@@ -63,7 +63,6 @@
     --color-bar-newbie: #ffffff; --color-bar-intermediate: #eab308;
     --color-bar-advanced: #f97316; --color-bar-master: #059669; --color-bar-expert: #7c3aed;
     --color-level-newbie: var(--color-bar-newbie);
-    --color-level-newbie-fill: #d1d5db;
     --color-level-intermediate: var(--color-bar-intermediate);
     --color-level-advanced: var(--color-bar-advanced);
     --color-level-master: var(--color-bar-master);

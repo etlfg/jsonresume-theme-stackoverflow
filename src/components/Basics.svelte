@@ -134,6 +134,8 @@
 
   .location {
     display: inline;
+    white-space: nowrap;
+    font-size: var(--fs-micro);
   }
 
   .image {
