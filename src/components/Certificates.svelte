@@ -17,15 +17,10 @@
           title={cert.name}
           subtitle={cert.issuer}
           subtitleClass="issuer"
+          url={cert.url}
           singleDate={cert.date ? MY(cert.date) : undefined}
           {language}
         >
-          {#if cert.url}
-            <span class="url">
-              <span class="fa-solid fa-up-right-from-square"></span>
-              <a target="_blank" href={cert.url}>{cert.url}</a>
-            </span>
-          {/if}
         </TimelineItem>
       {/each}
     </section>

@@ -34,7 +34,7 @@
     align-items: flex-start;
     gap: 2px;
     font-size: var(--fs-meta);
-    color: var(--color-date);
+    color: var(--color-text-secondary);
     font-weight: 500;
     line-height: var(--lh-snug);
     letter-spacing: 0.02em;
@@ -61,7 +61,7 @@
 
   @media print {
     .date-atomic {
-      color: var(--color-date);
+      color: var(--color-text-secondary);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }

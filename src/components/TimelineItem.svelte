@@ -157,11 +157,15 @@
     letter-spacing: 0.02em;
   }
 
-  .timeline-date .date-atomic {
+  .timeline-date :global(.date-atomic) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 2px;
+  }
+
+  .timeline-date :global(.date-range) {
+    align-items: flex-end;
   }
 
   .timeline-dot {
@@ -305,11 +309,11 @@
       margin-left: 5.5px; /* Align with dot center */
     }
 
-    .timeline-date .date-atomic {
+    .timeline-date :global(.date-atomic) {
       align-items: flex-start;
     }
 
-    .timeline-date .date-range {
+    .timeline-date :global(.date-range) {
       align-items: flex-start;
     }
 
