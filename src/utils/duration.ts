@@ -7,26 +7,118 @@ export interface DurationResult {
 }
 
 /**
- * Parses a date strings in various formats (YYYY-MM-DD, YYYY-MM, YYYY)
- * into a Date object.
+ * Month names (French and English) mapped to their 1-based month index.
+ * Keys are accent-free and lower case: "février" -> "fevrier", "août" -> "aout".
  */
-export function parseResumeDate(dateStr: string | undefined): Date | null {
+const MONTH_NAMES: Record<string, number> = {
+  // French: full names
+  janvier: 1,
+  fevrier: 2,
+  mars: 3,
+  avril: 4,
+  mai: 5,
+  juin: 6,
+  juillet: 7,
+  aout: 8,
+  septembre: 9,
+  octobre: 10,
+  novembre: 11,
+  decembre: 12,
+  // French: abbreviations
+  janv: 1,
+  fev: 2,
+  fevr: 2,
+  avr: 4,
+  juil: 7,
+  aou: 8,
+  sept: 9,
+  oct: 10,
+  nov: 11,
+  dec: 12,
+  // English: full names
+  january: 1,
+  february: 2,
+  march: 3,
+  april: 4,
+  june: 6,
+  july: 7,
+  august: 8,
+  september: 9,
+  october: 10,
+  november: 11,
+  december: 12,
+  // English: abbreviations
+  jan: 1,
+  feb: 2,
+  mar: 3,
+  apr: 4,
+  may: 5,
+  jun: 6,
+  jul: 7,
+  aug: 8,
+  sep: 9,
+};
+
+/** Optional day prefix, month name (optionally dotted) and a 4 digit year: "17 juillet 2026", "1er mai 2022", "juil. 2026". */
+const MONTH_NAME_DATE = /^(\d{1,2}\s*(?:er)?\s*)?([a-z]+)\.?\s+(\d{4})$/;
+
+/**
+ * Strips diacritics and lower cases a string so "Février" and "fevrier"
+ * compare equal.
+ */
+function normalizeMonthToken(value: string): string {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+/**
+ * Parses textual month dates such as "juillet 2026", "décembre 2021",
+ * "17 août 2019" or "Jul 2026". Returns null when the string does not match.
+ */
+function parseMonthNameDate(dateStr: string): Date | null {
+  const match = normalizeMonthToken(dateStr.trim()).match(MONTH_NAME_DATE);
+  if (!match) return null;
+
+  const month = MONTH_NAMES[match[2]];
+  if (!month) return null;
+
+  const day = match[1] ? parseInt(match[1], 10) : 1;
+  const year = parseInt(match[3], 10);
+
+  // Local time so that the day/month/year survive any UTC offset.
+  const parsed = new Date(year, month - 1, day);
+  return isNaN(parsed.getTime()) ? null : parsed;
+}
+
+/**
+ * Parses a date string in various formats (YYYY-MM-DD, YYYY-MM, YYYY,
+ * month name + year) into a Date object.
+ */
+export function parseResumeDate(dateStr: string | Date | undefined): Date | null {
   if (!dateStr) return null;
+  if (dateStr instanceof Date) return isNaN(dateStr.getTime()) ? null : dateStr;
+
+  const value = dateStr.trim();
 
   // Handle YYYY-MM-DD
-  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
-    return new Date(dateStr);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return new Date(value);
   }
   // Handle YYYY-MM
-  if (/^\d{4}-\d{2}$/.test(dateStr)) {
-    return new Date(`${dateStr}-01`);
+  if (/^\d{4}-\d{2}$/.test(value)) {
+    return new Date(`${value}-01`);
   }
   // Handle YYYY
-  if (/^\d{4}$/.test(dateStr)) {
-    return new Date(`${dateStr}-01-01`);
+  if (/^\d{4}$/.test(value)) {
+    return new Date(`${value}-01-01`);
   }
+  // Handle month names, e.g. "juillet 2026", "décembre 2021", "Jul 2026"
+  const named = parseMonthNameDate(value);
+  if (named) return named;
 
-  const parsed = new Date(dateStr);
+  const parsed = new Date(value);
   return isNaN(parsed.getTime()) ? null : parsed;
 }
 
