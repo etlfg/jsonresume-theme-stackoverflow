@@ -22,7 +22,7 @@
 </script>
 
 <section class="timeline-item">
-  <header class="clear">
+  <header class="header-flex">
     <div class="header-left">
       {#if title}
         <div class="position">{title}</div>
@@ -44,7 +44,6 @@
         <div class="date">{singleDate}</div>
       {/if}
     </div>
-  </header>
 
   {#if location}
     <span class="location">
@@ -111,11 +110,12 @@
   .title {
     font-weight: 700;
   }
-
   .date-container {
-    float: right !important;
-    text-align: right !important;
+    flex-shrink: 0;
+    text-align: right;
     padding-top: 0.2em;
+    margin-left: var(--sp-4);
+    white-space: nowrap;
   }
 
   .company::before,
@@ -138,6 +138,19 @@
   }
 
   /* p margin handled via inline styles in paragraphSplit */
+
+  .header-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-1);
+  }
+
+  .header-left {
+    flex: 1;
+    min-width: 0;
+  }
 
   .clear::after {
     content: "";
@@ -185,13 +198,20 @@
 
   @media screen and (max-width: 601px) {
     :global(.section) > section > header { font-size: 1.071rem; }
+    .header-flex {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .date-container {
+      text-align: left;
+      margin-left: 0;
+      padding-top: 0;
+    }
   }
-
   @media screen and (min-width: 1025px) {
     :global(.section) > section > header .space-left { opacity: 1; cursor: pointer; }
     :global(.section) > section:not(.main-summary) { margin-left: 1.67rem; }
     .company::before, .institution::before, .organization::before, .awarder::before { content: "| "; }
-    .header-left { float: left; width: 70%; word-break: normal; }
     .display { display: none; }
     .display:not(.none) { display: block; }
   }
