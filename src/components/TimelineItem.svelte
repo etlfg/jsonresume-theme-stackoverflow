@@ -23,11 +23,6 @@
 
 <section class="timeline-item">
   <header class="clear">
-    {#if startDate}
-      <DateRange {startDate} {endDate} {language} />
-    {:else if singleDate}
-      <div class="date">{singleDate}</div>
-    {/if}
     <div class="header-left">
       {#if title}
         <div class="position">{title}</div>
@@ -40,6 +35,13 @@
             {subtitle}
           {/if}
         </div>
+      {/if}
+    </div>
+    <div class="date-container">
+      {#if startDate}
+        <DateRange {startDate} {endDate} {language} />
+      {:else if singleDate}
+        <div class="date">{singleDate}</div>
       {/if}
     </div>
   </header>
@@ -98,7 +100,8 @@
   .title,
   .awarder,
   .publisher,
-  .issuer {
+  .issuer,
+  .duration {
     display: inline;
   }
 
@@ -107,6 +110,12 @@
   .area,
   .title {
     font-weight: 700;
+  }
+
+  .date-container {
+    float: right !important;
+    text-align: right !important;
+    padding-top: 0.2em;
   }
 
   .company::before,

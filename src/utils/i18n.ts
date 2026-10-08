@@ -14,6 +14,7 @@ const resources: I18nResources = {
     "resume.publications": "Publications",
     "resume.interests": "Interests",
     "resume.references": "References",
+    "resume.present": "Present",
   },
   de: {
     "resume.summary": "Übersicht",
@@ -28,6 +29,7 @@ const resources: I18nResources = {
     "resume.publications": "Veröffentlichungen",
     "resume.interests": "Interessen",
     "resume.references": "Empfehlungen",
+    "resume.present": "Gegenwart",
   },
   fr: {
     "resume.summary": "Résumé",
@@ -42,6 +44,7 @@ const resources: I18nResources = {
     "resume.publications": "Publications",
     "resume.interests": "Centres d'intérêt",
     "resume.references": "Références",
+    "resume.present": "Présent",
   },
   es: {
     "resume.summary": "Resumen",
