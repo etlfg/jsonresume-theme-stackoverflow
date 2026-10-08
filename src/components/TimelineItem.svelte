@@ -215,4 +215,10 @@
     .display { display: none; }
     .display:not(.none) { display: block; }
   }
+
+  :global(.header-flex .keywords) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
 </style>
